@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { db } from "./firebase";
 import { ref, onValue, update } from "firebase/database";
-import "./dashboard.css";
+import "./styles/dashboard.css";
 
 export default function DashboardPedidos() {
   const [pedidos, setPedidos] = useState([]);

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { db } from "./firebase";
 import { ref, get } from "firebase/database";
-import "./dashboard.css";
+import "./styles/dashboard.css";
 
 export default function PedidoDetalle() {
   const { id } = useParams();

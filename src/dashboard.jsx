@@ -20,7 +20,7 @@ import {
 } from "firebase/storage";
 
 import DashboardPedidos from "./DashboardPedidos";
-import "./dashboard.css";
+import "./styles/dashboard.css";
 
 export default function Dashboard() {
   const navigate = useNavigate();

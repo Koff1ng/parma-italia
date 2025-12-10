@@ -1,6 +1,6 @@
 // BagPage.jsx
 import { useCart } from "./CartContext";
-import "./bagpage.css";
+import "./styles/bagpage.css";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function BagPage() {

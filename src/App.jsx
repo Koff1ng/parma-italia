@@ -10,11 +10,11 @@ import { lazy, Suspense } from "react";
 import { db } from "./firebase";
 import { ref, onValue } from "firebase/database";
 import { useCart } from "./CartContext";
-import "./App.css";
+import "./styles/App.css";
 import Hero from "./components/Hero";
 import Loader from "./components/Loader";
 import PedidoDetalle from "./PedidoDetalle";
-import "./payment-status.css";
+import "./styles/payment-status.css";
 // ⭐ IMPORTANTE: HANDLER DE MERCADOPAGO
 import MercadoPagoHandler from "./MercadoPagoHandler";
 import SuccessPage from "./SuccessPage";

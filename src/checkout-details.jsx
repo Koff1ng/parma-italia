@@ -2,8 +2,7 @@ import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { db } from "./firebase";
 import { ref, set } from "firebase/database";
-import "./checkoutdetails.css";
-
+import "./styles/checkoutdetails.css";
 export default function CheckoutDetails() {
   const { state } = useLocation();
   const cart = state?.cart || [];

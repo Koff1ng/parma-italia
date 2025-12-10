@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { db } from "./firebase";
 import { ref, get } from "firebase/database";
 import { useCart } from "./CartContext";
-import "./productdetails.css";
+import "./styles/productdetails.css";
 
 export default function ProductDetails({ setOpenCart }) {
   const { id } = useParams();

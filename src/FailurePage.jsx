@@ -1,6 +1,6 @@
 // FailurePage.jsx
 import { Link } from "react-router-dom";
-import "./payment-status.css";
+import "./styles/payment-status.css";
 
 export default function FailurePage() {
   return (

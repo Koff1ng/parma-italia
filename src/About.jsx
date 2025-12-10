@@ -1,5 +1,5 @@
 // src/About.jsx
-import "./About.css";
+import "./styles/About.css";
 import { useEffect } from "react";
 
 export default function About() {

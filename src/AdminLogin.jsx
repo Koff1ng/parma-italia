@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
-import "./Admin.css";  // correcto
+import "./styles/Admin.css";  // correcto
 
 export default function AdminLogin() {
   const navigate = useNavigate();

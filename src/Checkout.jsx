@@ -1,6 +1,6 @@
 import { useCart } from "./CartContext";
 import { Link } from "react-router-dom";
-import "./Checkout.css";
+import "./styles/Checkout.css";
 
 export default function Checkout() {
   const { cart, total, clearCart } = useCart();

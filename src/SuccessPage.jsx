@@ -1,6 +1,6 @@
 // SuccessPage.jsx
 import { Link, useLocation } from "react-router-dom";
-import "./payment-status.css";
+import "./styles/payment-status.css";
 
 export default function SuccessPage() {
   const query = new URLSearchParams(useLocation().search);
