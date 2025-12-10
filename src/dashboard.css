@@ -1,0 +1,317 @@
+/* =============================
+   DASHBOARD GENERAL
+============================= */
+/* Arregla que los inputs nunca se salgan */
+.admin-form *,
+.admin-form *::before,
+.admin-form *::after {
+  box-sizing: border-box !important;
+}
+
+
+.dashboard-container {
+  padding: 30px;
+  min-height: 100vh;
+  background: #f4f5fa;
+  color: #111;
+}
+
+.panel-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.panel-grid {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* =============================
+   FORMULARIO
+============================= */
+
+.admin-form {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: grid;
+  gap: 15px;
+  width: 100%;
+  max-width: 350px;
+}
+
+.admin-form input {
+  width: 100%;
+  max-width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  box-sizing: border-box !important;
+}
+
+
+.file-label {
+  font-size: 14px;
+  color: #555;
+  display: grid;
+}
+
+.preview-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+  object-fit: cover;
+}
+
+/* =============================
+   TALLAS
+============================= */
+
+.tallas-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+}
+
+/* =============================
+   BOTONES DE TALLAS
+============================= */
+
+.tallas-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.talla-btn {
+  padding: 6px 14px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #f8f8f8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.talla-btn:hover {
+  background: #e5e5e5;
+}
+
+.talla-btn.active {
+  background: #111;
+  color: white;
+  border-color: #111;
+}
+
+.talla-btn.active:hover {
+  background: #333;
+}
+
+
+
+/* =============================
+   BOTÓN GUARDAR
+============================= */
+
+.btn-save {
+  background: #111;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.btn-save:hover {
+  background: #333;
+}
+
+/* =============================
+   LISTA DE PRODUCTOS
+============================= */
+
+.products-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.products-grid {
+  margin-top: 15px;
+  width: 100%;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 22px;
+  justify-items: center;
+}
+
+.product-card {
+  width: 240px;
+  background: white;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.info h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.info p {
+  margin: 0;
+  color: #000000;
+  font-weight: 300;
+}
+
+.tallas-view {
+  font-size: 12px;
+  color: #555;
+}
+
+/* =============================
+   BOTONES EDITAR / BORRAR
+============================= */
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.btn-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0;
+  transition: background 0.2s ease, transform 0.1s ease, border-color 0.2s;
+}
+
+.btn-icon:hover {
+  background: #e9e9e9;
+  transform: translateY(-1px);
+  border-color: #ccc;
+}
+
+.btn-edit:hover {
+  background: #ffe9d4;
+  border-color: #ff9f40;
+}
+
+.btn-delete:hover {
+  background: #ffe3e3;
+  border-color: #ff4d4f;
+}
+/* =======================
+   PANEL DE PEDIDOS
+======================= */
+.pedidos-container {
+  margin-top: 40px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.pedidos-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pedidos-table th {
+  background: black;
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+.pedidos-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Estados coloreados */
+.estado.pendiente { color: #d49c00; font-weight: bold; }
+.estado.pagado { color: #24a31c; font-weight: bold; }
+.estado.rechazado { color: #d62828; font-weight: bold; }
+.estado.enviado { color: #0077ff; font-weight: bold; }
+.estado.entregado { color: #009c53; font-weight: bold; }
+
+/* Dropdown */
+.estado-select {
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+}
+.detalle-container {
+  margin-top: 30px;
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+}
+
+.volver {
+  display: inline-block;
+  margin-bottom: 20px;
+  text-decoration: none;
+  background: black;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+}
+
+.detalle-box {
+  margin-bottom: 25px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #f5f5f5;
+}
+
+.detalle-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+.btn-test-telegram {
+  padding: 10px 20px;
+  background: #0088cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.btn-test-telegram:hover {
+  background: #0077b3;
+}

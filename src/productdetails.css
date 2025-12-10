@@ -1,0 +1,180 @@
+.detail-container {
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* ================================
+   📸 GALERÍA – DESKTOP
+================================ */
+.galeria {
+  display: flex;
+  gap: 20px;
+}
+
+.galeria-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.galeria-grid img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.25s ease;
+  border: 2px solid transparent;
+}
+
+.galeria-grid img:hover {
+  opacity: 0.9;
+}
+
+.active-thumb {
+  opacity: 1;
+  border-color: black;
+}
+
+/* ================================
+   🖼 IMAGEN PRINCIPAL + ZOOM
+================================ */
+.zoom-follow-wrapper {
+  position: relative;
+  width: 480px;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: zoom-in;
+}
+
+.zoom-follow-img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.25s ease, transform-origin 0.1s ease;
+}
+
+.zoom-follow-wrapper:hover .zoom-follow-img {
+  transform: scale(2.3);
+  transform-origin: var(--zoom-x) var(--zoom-y);
+}
+
+/* ================================
+   📝 INFORMACIÓN
+================================ */
+.info {
+  width: 420px;
+  max-width: 100%;
+}
+
+/* ==========================================
+   📱 MOBILE RESPONSIVE
+========================================== */
+@media (max-width: 768px) {
+
+  .detail-container {
+    flex-direction: column;
+    padding: 12px;
+    gap: 20px;
+  }
+
+  /* Galería en columna → thumbnails en fila */
+  .galeria {
+    flex-direction: column;
+  }
+
+  .galeria-grid {
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+  }
+
+  .galeria-grid img {
+    width: 75px;
+    height: 75px;
+    border-radius: 5px;
+    opacity: 0.8;
+  }
+
+  .active-thumb {
+    border-color: black;
+    opacity: 1;
+  }
+
+  /* Imagen principal */
+  .zoom-follow-wrapper {
+    width: 100%;
+  }
+
+  .zoom-follow-wrapper img {
+    width: 100%;
+  }
+
+  /* Info */
+  .info {
+    width: 100%;
+  }
+
+  .info h1 {
+    font-size: 24px;
+  }
+
+  .precio {
+    font-size: 20px;
+  }
+
+  .size-options {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .size-btn {
+    padding: 8px 14px;
+    font-size: 15px;
+  }
+
+  .btn-add-cart {
+    width: 100%;
+    padding: 14px;
+    font-size: 17px;
+  }
+}
+
+/* ACCORDEÓN (sin cambios) */
+.acordeon-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 0;
+  user-select: none;
+}
+
+.acordeon-header .acc-icon {
+  font-size: 22px;
+  font-weight: 300;
+  transition: transform 0.3s ease;
+}
+
+.acordeon-content {
+  max-height: 0;
+  overflow: hidden;
+  color: #444;
+  transition: max-height 0.35s ease, padding 0.3s ease;
+  line-height: 1.6;
+}
+
+.acordeon-content.open {
+  max-height: 500px;
+  padding: 10px 0;
+}
+
+.acordeon {
+  border-bottom: 1px solid #eaeaea;
+}
