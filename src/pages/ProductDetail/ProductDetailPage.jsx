@@ -49,7 +49,7 @@ export default function ProductDetailPage({ setOpenCart }) {
   if (!product) {
     return (
       <div className="container not-found-wrapper">
-        <h2>Item not found / Prenda no encontrada.</h2>
+        <h2>Prenda no encontrada en El Vault.</h2>
       </div>
     );
   }
@@ -80,19 +80,19 @@ export default function ProductDetailPage({ setOpenCart }) {
 
   const secciones = [
     {
-      title: "DESCRIPTION & DETAILS / DESCRIPCIÓN",
-      text: detalles.descripcion || "Edición exclusiva de archivo con confección artesanal de alta costura y etiquetas de firma.",
+      title: "DESCRIPCIÓN Y DETALLES",
+      text: detalles.descripcion || "Edición exclusiva de archivo con confección artesanal de alta costura y etiquetas de la casa de moda.",
     },
     {
-      title: "COMPOSITION & MATERIALS / MATERIALES",
-      text: detalles.material || "100% Cotton Heavyweight French Terry / Algodón Pesado de Alto Gramaje.",
+      title: "COMPOSICIÓN Y MATERIALES",
+      text: detalles.material || "100% Algodón Peinado Francés (500 GSM).",
     },
     {
-      title: "CARE INSTRUCTIONS / CUIDADOS",
-      text: detalles.cuidados || "Dry clean only or cold wash inside out / Lavar en seco o agua fría al revés.",
+      title: "CUIDADOS Y MANTENIMIENTO",
+      text: detalles.cuidados || "Lavar en seco o con agua fría al revés, no usar blanqueador, secar a la sombra.",
     },
     {
-      title: "SHIPPING & RETURNS / ENVÍOS NACIONALES",
+      title: "ENVÍOS Y TIEMPOS DE ENTREGA",
       text: "Despacho asegurado a todo el país. Entrega estimada en 2 a 4 días hábiles vía Servientrega / Interrapidísimo.",
     },
   ];
@@ -114,26 +114,26 @@ export default function ProductDetailPage({ setOpenCart }) {
         </div>
 
         <div className="main-image-box">
-          <div className="badge-red quality-tag">THE VOULT ARCHIVE DROP</div>
+          <div className="badge-red quality-tag">DROP EXCLUSIVO</div>
           <img src={selectedImg} alt={product.nombre} className="main-product-img" />
         </div>
       </div>
 
       {/* INFO COLUMN */}
       <div className="detail-info-col">
-        <span className="detail-category">{product.categoria || "EXCLUSIVE DROP"}</span>
+        <span className="detail-category">{product.categoria || "COLECCIÓN EXCLUSIVA"}</span>
         <h1 className="detail-title">{product.nombre}</h1>
 
         <div className="detail-price-box">
           <span className="detail-price">{formatCurrency(product.precio)}</span>
-          <span className="tax-notice">TAX INCLUDED • SECURE SHIPPING / IMPUESTOS INCLUIDOS</span>
+          <span className="tax-notice">IMPUESTOS INCLUIDOS • ENVÍO NACIONAL ASEGURADO</span>
         </div>
 
         {/* SIZES */}
         <div className="detail-sizes-box">
           <div className="size-label-row">
-            <label>SELECT SIZE / SELECCIONAR TALLA:</label>
-            <span className="size-guide-link">Size Guide</span>
+            <label>SELECCIONAR TALLA:</label>
+            <span className="size-guide-link">Guía de tallas</span>
           </div>
 
           <div className="sizes-flex">
@@ -160,7 +160,7 @@ export default function ProductDetailPage({ setOpenCart }) {
           onClick={handleAdd}
           disabled={!puedeAgregar}
         >
-          {puedeAgregar ? "ADD TO BAG / AÑADIR A LA BOLSA 🛍️" : "SOLD OUT IN THIS SIZE"}
+          {puedeAgregar ? "AÑADIR A LA BOLSA 🛍️" : "AGOTADO EN ESTA TALLA"}
         </button>
 
         {/* ACCORDION SECTIONS */}

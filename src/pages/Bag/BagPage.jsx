@@ -31,9 +31,9 @@ export default function BagPage() {
     const coupon = await couponService.validateCoupon(couponInput);
     if (coupon) {
       setAppliedCoupon(coupon);
-      setCouponStatus({ success: true, message: `¡Coupon ${coupon.codigo} applied successfully!` });
+      setCouponStatus({ success: true, message: `¡Cupón ${coupon.codigo} aplicado con éxito!` });
     } else {
-      setCouponStatus({ success: false, message: "Invalid or expired promo code." });
+      setCouponStatus({ success: false, message: "Código de descuento no válido o expirado." });
     }
   };
 
@@ -58,10 +58,10 @@ export default function BagPage() {
       <div className="bag-page-container container empty-bag-view">
         <div className="empty-box">
           <span className="red-icon">🛍️</span>
-          <h2>YOUR SHOPPING BAG IS EMPTY / TU BOLSA ESTÁ VACÍA</h2>
-          <p>Explore our exclusive archive drops and start your order.</p>
+          <h2>TU BOLSA DE COMPRAS ESTÁ VACÍA</h2>
+          <p>Explora nuestras colecciones exclusivas e inicia tu orden.</p>
           <Link to="/" className="btn-red">
-            VIEW CATALOG / VER CATÁLOGO
+            VER CATÁLOGO
           </Link>
         </div>
       </div>
@@ -70,7 +70,7 @@ export default function BagPage() {
 
   return (
     <div className="bag-page-container container">
-      <h1 className="bag-heading">SHOPPING BAG / TU BOLSA DE COMPRAS</h1>
+      <h1 className="bag-heading">TU BOLSA DE COMPRAS</h1>
 
       <div className="bag-grid">
         {/* ITEMS TABLE / LIST */}
@@ -85,7 +85,7 @@ export default function BagPage() {
 
                 <div className="bag-item-details">
                   <h3 className="bag-item-name">{item.nombre}</h3>
-                  {item.size && <span className="bag-item-size">SIZE / TALLA: {item.size}</span>}
+                  {item.size && <span className="bag-item-size">TALLA: {item.size}</span>}
                   <span className="bag-item-unit-price">{formatCurrency(precio)} c/u</span>
 
                   <div className="bag-qty-actions">
@@ -99,7 +99,7 @@ export default function BagPage() {
                       className="bag-remove-link"
                       onClick={() => deleteItemCompletely(item.id, item.size)}
                     >
-                      Remove / Eliminar
+                      Eliminar
                     </button>
                   </div>
                 </div>
@@ -112,13 +112,13 @@ export default function BagPage() {
           })}
 
           <button className="clear-bag-btn" onClick={clearCart}>
-            Empty Bag / Vaciar bolsa
+            Vaciar bolsa de compras
           </button>
         </div>
 
         {/* SUMMARY CARD */}
         <div className="bag-summary-card">
-          <h3 className="summary-title">ORDER SUMMARY / RESUMEN</h3>
+          <h3 className="summary-title">RESUMEN DEL PEDIDO</h3>
 
           <div className="summary-line">
             <span>Subtotal:</span>
@@ -127,24 +127,24 @@ export default function BagPage() {
 
           {appliedCoupon && (
             <div className="summary-line discount">
-              <span>Discount ({appliedCoupon.codigo}):</span>
+              <span>Descuento ({appliedCoupon.codigo}):</span>
               <span>-{formatCurrency(discountAmount)}</span>
             </div>
           )}
 
           <div className="summary-line total-line">
-            <span>ESTIMATED TOTAL:</span>
+            <span>TOTAL ESTIMADO:</span>
             <span className="red-price">{formatCurrency(total)}</span>
           </div>
 
           <form className="bag-coupon-form" onSubmit={handleApplyCoupon}>
             <input
               type="text"
-              placeholder="Promo / VIP Code"
+              placeholder="Código de descuento"
               value={couponInput}
               onChange={(e) => setCouponInput(e.target.value)}
             />
-            <button type="submit">APPLY</button>
+            <button type="submit">APLICAR</button>
           </form>
 
           {couponStatus && (
@@ -155,10 +155,10 @@ export default function BagPage() {
 
           <div className="checkout-buttons">
             <button className="btn-red full-btn" onClick={() => navigate("/checkout")}>
-              PROCEED TO CHECKOUT / CHECKOUT →
+              PROCEDER AL CHECKOUT →
             </button>
             <button className="btn-red-outline full-btn" onClick={handleQuickWhatsAppOrder}>
-              ORDER VIA WHATSAPP / WHATSAPP DIRECT 📲
+              COMPRAR POR WHATSAPP 📲
             </button>
           </div>
         </div>

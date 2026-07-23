@@ -12,14 +12,14 @@ export default function HomePage({ setOpenCart }) {
   const { products, categories, loading } = useProducts();
   const navigate = useNavigate();
 
-  const [selectedCategory, setSelectedCategory] = useState("Todos / All");
+  const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [selectedProductForSize, setSelectedProductForSize] = useState(null);
   const [page, setPage] = useState(1);
   const productsPerPage = 8;
 
-  // Build dynamic category list: Always include "Todos / All" first
+  // Build dynamic category list: Always include "Todos" first
   const dynamicCategoriesList = useMemo(() => {
-    const list = [{ label: "Todos / All", value: "Todos / All" }];
+    const list = [{ label: "Todos", value: "Todos" }];
     if (Array.isArray(categories)) {
       categories.forEach((cat) => {
         list.push({
@@ -33,7 +33,7 @@ export default function HomePage({ setOpenCart }) {
 
   // Filter products by category tab
   const filteredProducts = useMemo(() => {
-    if (selectedCategory === "Todos / All") return products;
+    if (selectedCategory === "Todos") return products;
     return products.filter((p) => {
       const cat = (p.categoria || "").toLowerCase();
       const selected = selectedCategory.toLowerCase();
@@ -80,8 +80,8 @@ export default function HomePage({ setOpenCart }) {
 
       <section id="catalog-section" className="catalog-container container">
         <div className="catalog-header">
-          <span className="badge-red">EXCLUSIVITÉ • ARCHIVE DROPS</span>
-          <h2 className="catalog-title">NEW ARRIVALS / NUEVA COLECCIÓN</h2>
+          <span className="badge-red">COLECCIÓN EXCLUSIVA</span>
+          <h2 className="catalog-title">NUEVOS LANZAMIENTOS</h2>
           <div className="red-divider"></div>
         </div>
 
@@ -120,7 +120,7 @@ export default function HomePage({ setOpenCart }) {
         {/* EMPTY STATE */}
         {!loading && filteredProducts.length === 0 && (
           <div className="empty-catalog-msg">
-            <p>No items found in this category / No se encontraron prendas en esta categoría.</p>
+            <p>No se encontraron prendas en esta categoría por el momento.</p>
           </div>
         )}
 
@@ -147,17 +147,17 @@ export default function HomePage({ setOpenCart }) {
                   onClick={() => setPage((p) => p - 1)}
                   className="page-btn"
                 >
-                  ← PREVIOUS / ANTERIOR
+                  ← ANTERIOR
                 </button>
                 <span className="page-info">
-                  PAGE / PÁGINA {page} DE {totalPages}
+                  PÁGINA {page} DE {totalPages}
                 </span>
                 <button
                   disabled={page === totalPages}
                   onClick={() => setPage((p) => p + 1)}
                   className="page-btn"
                 >
-                  NEXT / SIGUIENTE →
+                  SIGUIENTE →
                 </button>
               </div>
             )}

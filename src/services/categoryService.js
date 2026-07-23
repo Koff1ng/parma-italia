@@ -1,10 +1,10 @@
 import { supabase } from "../lib/supabase";
 
 export const MOCK_CATEGORIES = [
-  { id: "cat-1", nombre: "T-Shirts / Camisetas", slug: "t-shirts", orden: 1 },
-  { id: "cat-2", nombre: "Hoodies & Sweatshirts", slug: "hoodies", orden: 2 },
-  { id: "cat-3", nombre: "Jackets & Outerwear / Chaquetas", slug: "jackets", orden: 3 },
-  { id: "cat-4", nombre: "Sets & Tracksuits / Conjuntos", slug: "sets", orden: 4 },
+  { id: "cat-1", nombre: "Camisetas", slug: "camisetas", orden: 1 },
+  { id: "cat-2", nombre: "Hoodies y Sacos", slug: "hoodies-sacos", orden: 2 },
+  { id: "cat-3", nombre: "Chaquetas y Abrigos", slug: "chaquetas-abrigos", orden: 3 },
+  { id: "cat-4", nombre: "Conjuntos", slug: "conjuntos", orden: 4 },
 ];
 
 const LOCAL_STORAGE_KEY = "tvp_categories";

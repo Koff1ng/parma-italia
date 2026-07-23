@@ -19,8 +19,8 @@ export default function Navbar({ isScrolled, navVisible, setOpenCart }) {
         <div className="nav-left">
           <MobileMenu />
           <nav className="desktop-menu">
-            <Link to="/" className="nav-link">ARCHIVE / DROPS</Link>
-            <Link to="/about" className="nav-link">MANIFESTO</Link>
+            <Link to="/" className="nav-link">COLECCIÓN</Link>
+            <Link to="/about" className="nav-link">SOBRE NOSOTROS</Link>
           </nav>
         </div>
 
@@ -34,9 +34,9 @@ export default function Navbar({ isScrolled, navVisible, setOpenCart }) {
           <button
             className="cart-trigger-btn"
             onClick={() => setOpenCart(true)}
-            aria-label="Shopping Bag / Bolsa de compras"
+            aria-label="Bolsa de compras"
           >
-            <span className="cart-btn-label">BAG</span>
+            <span className="cart-btn-label">BOLSA</span>
             <svg
               width="20"
               height="20"

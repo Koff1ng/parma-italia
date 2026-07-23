@@ -1,10 +1,10 @@
 import { supabase } from "../lib/supabase";
 
-// Authentic luxury mock catalog for THE VOULT PRESTIGE
+// Catálogo mock exclusivo en español para THE VOULT PRESTIGE
 export const MOCK_PRODUCTS = [
   {
     id: "TVP-001",
-    nombre: "Balenciaga Crest Heavyweight Hoodie",
+    nombre: "Hoodie Balenciaga Crest Heavyweight",
     precio: 380000,
     url_imagen: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80",
     imagenes: [
@@ -14,16 +14,16 @@ export const MOCK_PRODUCTS = [
     tallas: { XS: true, S: true, M: true, L: true, XL: true, "2XL": true },
     stock: { XS: 5, S: 8, M: 12, L: 10, XL: 6, "2XL": 4 },
     detalles: {
-      descripcion: "Confeccionado en algodón peinado de 500 GSM con silueta oversized de alta costura, bordado frontal metálico y acabados artesanales de archivo. Crafted with 500 GSM heavyweight French terry cotton.",
-      material: "100% French Terry Cotton (500 GSM)",
-      cuidados: "Dry clean only or cold wash inside out / Lavar en seco o agua fría al revés."
+      descripcion: "Confeccionado en algodón peinado de 500 GSM con silueta oversized de alta costura, bordado frontal metálico y acabados artesanales de archivo.",
+      material: "100% Algodón Peinado Francés (500 GSM)",
+      cuidados: "Lavar en seco o agua fría al revés."
     },
-    categoria: "Hoodies & Sweatshirts",
+    categoria: "Hoodies y Sacos",
     es_destacado: true
   },
   {
     id: "TVP-002",
-    nombre: "Chrome Hearts Horseshoe Logo Tee",
+    nombre: "Camiseta Chrome Hearts Horseshoe Logo",
     precio: 240000,
     url_imagen: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1000&q=80",
     imagenes: [
@@ -33,16 +33,16 @@ export const MOCK_PRODUCTS = [
     tallas: { XS: false, S: true, M: true, L: true, XL: true, "2XL": false },
     stock: { XS: 0, S: 6, M: 10, L: 8, XL: 5, "2XL": 0 },
     detalles: {
-      descripcion: "Camiseta de corte relajado con serigrafía de alta densidad en relieve y detalles característicos de archivo en mangas y espalda. Premium luxury streetwear aesthetic.",
-      material: "100% Organic Heavy Cotton (280 GSM)",
-      cuidados: "Machine wash cold inside out / Lavado delicado en frío."
+      descripcion: "Camiseta de corte relajado con serigrafía de alta densidad en relieve y detalles característicos de archivo en mangas y espalda.",
+      material: "100% Algodón Orgánico Pesado (280 GSM)",
+      cuidados: "Lavado delicado en frío."
     },
-    categoria: "T-Shirts / Camisetas",
+    categoria: "Camisetas",
     es_destacado: true
   },
   {
     id: "TVP-003",
-    nombre: "Louis Vuitton Monogram Archive Puffer Jacket",
+    nombre: "Chaqueta Louis Vuitton Monogram Archive Puffer",
     precio: 750000,
     url_imagen: "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=1000&q=80",
     imagenes: [
@@ -52,16 +52,16 @@ export const MOCK_PRODUCTS = [
     tallas: { XS: false, S: true, M: true, L: true, XL: true, "2XL": true },
     stock: { XS: 0, S: 3, M: 5, L: 4, XL: 2, "2XL": 1 },
     detalles: {
-      descripcion: "Chaqueta acolchada de alto rendimiento con patrón Monogram jacquard mate, herrajes de bronce macizo y aislamiento térmico de plumas. High performance weather resistant shell.",
-      material: "Technical Polyamide & Goose Down Fill",
-      cuidados: "Professional dry clean only / Lavado profesional en seco."
+      descripcion: "Chaqueta acolchada de alto rendimiento con patrón Monogram jacquard mate, herrajes de bronce macizo y aislamiento térmico de plumas.",
+      material: "Poliamida Técnica & Relleno de Plumas de Ganso",
+      cuidados: "Lavado profesional en seco exclusivamente."
     },
-    categoria: "Jackets & Outerwear / Chaquetas",
+    categoria: "Chaquetas y Abrigos",
     es_destacado: true
   },
   {
     id: "TVP-004",
-    nombre: "Trapstar Shooters Premium Tracksuit",
+    nombre: "Conjunto Trapstar Shooters Tracksuit",
     precio: 460000,
     url_imagen: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
     imagenes: [
@@ -71,16 +71,16 @@ export const MOCK_PRODUCTS = [
     tallas: { XS: true, S: true, M: true, L: true, XL: true, "2XL": false },
     stock: { XS: 4, S: 7, M: 9, L: 6, XL: 3, "2XL": 0 },
     detalles: {
-      descripcion: "Conjunto exclusivo de 2 piezas con parches en chenille de toalla de alto relieve y cremalleras de precisión. Signature London street style collection.",
-      material: "Cotton Blend Brushed Fleece (420 GSM)",
-      cuidados: "Wash cold, hang dry / Lavar con agua fría, secar colgado."
+      descripcion: "Conjunto exclusivo de 2 piezas con parches en chenille de toalla de alto relieve y cremalleras de precisión.",
+      material: "Algodón Cepillado & Poliéster de Alta Resistencia (420 GSM)",
+      cuidados: "Lavar con agua fría, secar colgado."
     },
-    categoria: "Sets & Tracksuits / Conjuntos",
+    categoria: "Conjuntos",
     es_destacado: true
   },
   {
     id: "TVP-005",
-    nombre: "Gucci Blade Edition Oversized Tee",
+    nombre: "Camiseta Gucci Blade Edition Oversized",
     precio: 250000,
     url_imagen: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=1000&q=80",
     imagenes: [
@@ -90,11 +90,11 @@ export const MOCK_PRODUCTS = [
     tallas: { XS: true, S: true, M: true, L: true, XL: true, "2XL": true },
     stock: { XS: 3, S: 6, M: 10, L: 8, XL: 4, "2XL": 2 },
     detalles: {
-      descripcion: "Camiseta de silueta contemporánea fabricada en algodón orgánico mercerizado de caída estructurada. Contemporary luxury drop edition.",
-      material: "100% Mercerized Organic Cotton",
-      cuidados: "Gentle wash / Lavado suave."
+      descripcion: "Camiseta de silueta contemporánea fabricada en algodón orgánico mercerizado de caída estructurada.",
+      material: "100% Algodón Orgánico Mercerizado",
+      cuidados: "Lavado suave a mano."
     },
-    categoria: "T-Shirts / Camisetas",
+    categoria: "Camisetas",
     es_destacado: false
   }
 ];

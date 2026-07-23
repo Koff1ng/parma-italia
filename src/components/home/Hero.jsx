@@ -35,7 +35,7 @@ export default function Hero() {
 
       <div className="hero-content container">
         <div className="hero-badge">
-          <span className="badge-red">LIMITED ARCHIVE DROPS • EDICIÓN EXCLUSIVA</span>
+          <span className="badge-red">EDICIONES LIMITADAS • DROPS EXCLUSIVOS</span>
         </div>
 
         {/* LOGO IMAGE DISPLAY IN HERO */}
@@ -44,16 +44,16 @@ export default function Hero() {
         </div>
 
         <p className="hero-subtitle">
-          CURATED HIGH-END STREETWEAR & ARCHIVE LUXURY APPAREL.<br />
+          STREETWEAR DE ALTA GAMA Y ROPA DE ARCHIVO DE LUJO.<br />
           EDICIONES LIMITADAS DE ALTA COSTURA CON ACABADOS DE AUTOR.
         </p>
 
         <div className="hero-actions">
           <button className="btn-red" onClick={scrollToCatalog}>
-            EXPLORE THE VAULT / EXPLORAR 🛍️
+            EXPLORAR EL VAULT 🛍️
           </button>
           <Link to="/about" className="btn-red-outline">
-            MANIFESTO / MANIFIESTO
+            NUESTRO MANIFIESTO
           </Link>
         </div>
       </div>

@@ -15,7 +15,7 @@ export default function MobileMenu() {
       <button
         className={`hamburger-btn ${isOpen ? "open" : ""}`}
         onClick={() => setIsOpen(!isOpen)}
-        aria-label="Toggle menu / Menú"
+        aria-label="Menú"
       >
         <span></span>
         <span></span>
@@ -35,34 +35,34 @@ export default function MobileMenu() {
         <ul className="drawer-nav-list">
           <li>
             <Link to="/" className="drawer-link">
-              ARCHIVE DROPS / INICIO
+              COLECCIÓN / INICIO
             </Link>
           </li>
           <li>
             <Link to="/about" className="drawer-link">
-              MANIFESTO / MANIFIESTO
+              SOBRE NOSOTROS
             </Link>
           </li>
           <li>
             <Link to="/bag" className="drawer-link">
-              SHOPPING BAG / BOLSA
+              BOLSA DE COMPRAS
             </Link>
           </li>
           <li>
             <Link to="/checkout" className="drawer-link">
-              CHECKOUT
+              FINALIZAR COMPRA
             </Link>
           </li>
           <li>
             <Link to="/admin" className="drawer-link admin-link">
-              ADMIN PORTAL
+              PANEL ADMIN
             </Link>
           </li>
         </ul>
 
         <div className="drawer-footer">
-          <span className="badge-red">THE VOULT EDITION</span>
-          <p>Curated High-End Streetwear</p>
+          <span className="badge-red">EDICIÓN EXCLUSIVA</span>
+          <p>Streetwear de Alta Gama</p>
         </div>
       </nav>
     </div>

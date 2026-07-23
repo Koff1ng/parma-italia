@@ -152,7 +152,7 @@ export default function AdminDashboard() {
         </div>
 
         <button className="btn-red-outline sm" onClick={handleLogout}>
-          LOGOUT / CERRAR SESIÓN 🔒
+          CERRAR SESIÓN 🔒
         </button>
       </div>
 
@@ -163,14 +163,14 @@ export default function AdminDashboard() {
       <div className="dashboard-main-grid">
         {/* PRODUCT FORM */}
         <div className="admin-card-box">
-          <h2>{editId ? "Editar Prenda / Edit Product" : "Agregar Prenda / Add Product"}</h2>
+          <h2>{editId ? "Editar Prenda" : "Agregar Prenda al Catálogo"}</h2>
 
           <form onSubmit={handleSubmit} className="admin-product-form">
             <div className="form-group">
-              <label>Nombre de la Prenda / Product Title *</label>
+              <label>Nombre de la Prenda *</label>
               <input
                 type="text"
-                placeholder="Ej: Balenciaga Heavyweight Hoodie"
+                placeholder="Ej: Hoodie Balenciaga Heavyweight"
                 value={nombre}
                 onChange={(e) => setNombre(e.target.value)}
                 required
@@ -190,7 +190,7 @@ export default function AdminDashboard() {
               </div>
 
               <div className="form-group">
-                <label>Categoría / Category</label>
+                <label>Categoría</label>
                 <select value={categoria} onChange={(e) => setCategoria(e.target.value)}>
                   {categories.map((c) => (
                     <option key={c.id} value={c.nombre}>
@@ -202,7 +202,7 @@ export default function AdminDashboard() {
             </div>
 
             <div className="form-group">
-              <label>Descripción / Details</label>
+              <label>Descripción y Detalles</label>
               <textarea
                 placeholder="Detalles de bordado, confección..."
                 value={detalles.descripcion}
@@ -222,7 +222,7 @@ export default function AdminDashboard() {
 
             {/* SIZES */}
             <div className="form-group">
-              <label>Tallas Disponibles / Available Sizes:</label>
+              <label>Tallas Disponibles:</label>
               <div className="tallas-toggle-grid">
                 {["XS", "S", "M", "L", "XL", "2XL"].map((t) => (
                   <button
@@ -255,7 +255,7 @@ export default function AdminDashboard() {
 
             <div className="form-actions">
               <button type="submit" className="btn-red" disabled={uploading}>
-                {uploading ? "UPLOADING..." : editId ? "GUARDAR CAMBIOS" : "AÑADIR AL CATÁLOGO"}
+                {uploading ? "SUBIENDO..." : editId ? "GUARDAR CAMBIOS" : "AÑADIR AL CATÁLOGO"}
               </button>
 
               {editId && (

@@ -19,14 +19,14 @@ const SizeModal = memo(({ product, onClose, onSelectSize }) => {
   return (
     <div className="size-modal-backdrop" onClick={onClose}>
       <div className="size-modal-card" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close-btn" onClick={onClose} aria-label="Close modal">
+        <button className="modal-close-btn" onClick={onClose} aria-label="Cerrar modal">
           ✕
         </button>
 
         <div className="modal-header">
-          <span className="badge-red">THE VOULT ARCHIVE</span>
+          <span className="badge-red">COLECCIÓN EXCLUSIVA</span>
           <h3 className="modal-title">{product.nombre}</h3>
-          <p className="modal-subtitle">SELECT SIZE / SELECCIONA TU TALLA</p>
+          <p className="modal-subtitle">SELECCIONA TU TALLA</p>
         </div>
 
         <div className="sizes-grid">
@@ -43,7 +43,7 @@ const SizeModal = memo(({ product, onClose, onSelectSize }) => {
         </div>
 
         <p className="size-guide-hint">
-          * Unisex relaxed fit. Standard sizing. / Talle estándar unisex.
+          * Corte holgado unisex. Talle estándar.
         </p>
       </div>
     </div>

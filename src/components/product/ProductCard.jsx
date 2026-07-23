@@ -39,11 +39,11 @@ const ProductCard = memo(({ product, index, onAddToCart, navigate }) => {
           loading="lazy"
           decoding="async"
         />
-        {estaAgotado && <div className="overlay-agotado">SOLD OUT / AGOTADO</div>}
+        {estaAgotado && <div className="overlay-agotado">AGOTADO</div>}
       </div>
 
       <div className="card-details">
-        <span className="product-category">{product.categoria || "ARCHIVE DROP"}</span>
+        <span className="product-category">{product.categoria || "COLECCIÓN EXCLUSIVA"}</span>
         <h3 className="product-title">{product.nombre}</h3>
         
         <div className="card-bottom-row">
@@ -57,7 +57,7 @@ const ProductCard = memo(({ product, index, onAddToCart, navigate }) => {
             }}
             disabled={estaAgotado}
           >
-            {estaAgotado ? "SOLD OUT" : "ADD TO BAG +"}
+            {estaAgotado ? "AGOTADO" : "AÑADIR +"}
           </button>
         </div>
       </div>

@@ -86,24 +86,24 @@ export default function CheckoutPage() {
   if (cart.length === 0) {
     return (
       <div className="checkout-empty-container container">
-        <h2>Your bag is empty / Tu bolsa está vacía para el checkout.</h2>
+        <h2>Tu bolsa de compras está vacía para realizar el checkout.</h2>
       </div>
     );
   }
 
   return (
     <div className="checkout-page-container container">
-      <h1 className="checkout-page-title">CHECKOUT & DISPATCH / DESPACHO</h1>
+      <h1 className="checkout-page-title">CHECKOUT Y DESPACHO</h1>
 
       <div className="checkout-grid">
         {/* LEFT COLUMN: CUSTOMER FORM */}
         <div className="checkout-form-col">
           <div className="checkout-card">
-            <h3 className="card-heading">1. SHIPPING & CONTACT DETAILS / DATOS DE ENVÍO</h3>
+            <h3 className="card-heading">1. DATOS DE ENVÍO Y CONTACTO</h3>
 
             <div className="form-group-row">
               <div className="form-field">
-                <label>Full Name / Nombre Completo *</label>
+                <label>Nombre y Apellidos *</label>
                 <input
                   type="text"
                   name="nombre"
@@ -114,7 +114,7 @@ export default function CheckoutPage() {
               </div>
 
               <div className="form-field">
-                <label>Phone / Contacto WhatsApp *</label>
+                <label>Teléfono de Contacto (WhatsApp) *</label>
                 <input
                   type="tel"
                   name="telefono"
@@ -127,7 +127,7 @@ export default function CheckoutPage() {
 
             <div className="form-group-row">
               <div className="form-field">
-                <label>City / Ciudad *</label>
+                <label>Ciudad de Envío *</label>
                 <input
                   type="text"
                   name="ciudad"
@@ -138,7 +138,7 @@ export default function CheckoutPage() {
               </div>
 
               <div className="form-field">
-                <label>Email (Optional / Opcional)</label>
+                <label>Correo Electrónico (Opcional)</label>
                 <input
                   type="email"
                   name="email"
@@ -150,7 +150,7 @@ export default function CheckoutPage() {
             </div>
 
             <div className="form-field full-width">
-              <label>Shipping Address / Dirección de Residencia *</label>
+              <label>Dirección de Residencia / Barrio *</label>
               <input
                 type="text"
                 name="direccion"
@@ -165,7 +165,7 @@ export default function CheckoutPage() {
         {/* RIGHT COLUMN: SUMMARY & PAYMENT SELECTION */}
         <div className="checkout-summary-col">
           <div className="checkout-card sticky-card">
-            <h3 className="card-heading">2. ORDER SUMMARY / RESUMEN</h3>
+            <h3 className="card-heading">2. RESUMEN DE COMPRA</h3>
 
             <div className="checkout-items-list">
               {cart.map((item) => (
@@ -176,7 +176,7 @@ export default function CheckoutPage() {
                   />
                   <div className="mini-info">
                     <span className="mini-title">{item.nombre}</span>
-                    <span className="mini-size">SIZE: {item.size || "STD"} x {item.qty}</span>
+                    <span className="mini-size">Talla: {item.size || "STD"} x {item.qty}</span>
                   </div>
                   <span className="mini-price">
                     {formatCurrency((item.itemprice || item.precio) * item.qty)}
@@ -193,26 +193,26 @@ export default function CheckoutPage() {
 
               {appliedCoupon && (
                 <div className="breakdown-row discount">
-                  <span>Discount ({appliedCoupon.codigo}):</span>
+                  <span>Descuento ({appliedCoupon.codigo}):</span>
                   <span>-{formatCurrency(discountAmount)}</span>
                 </div>
               )}
 
               <div className="breakdown-row total">
-                <span>TOTAL:</span>
+                <span>TOTAL A PAGAR:</span>
                 <span className="red-total-val">{formatCurrency(total)}</span>
               </div>
             </div>
 
             <div className="payment-options-box">
-              <h4 className="payment-heading">PAYMENT METHOD / MÉTODO DE PAGO:</h4>
+              <h4 className="payment-heading">SELECCIONA MÉTODO DE PAGO:</h4>
 
               <button
                 className="btn-red full-btn"
                 disabled={!isValid || isSubmitting}
                 onClick={() => handleCreateOrder("WhatsApp")}
               >
-                ORDER VIA WHATSAPP (NEQUI / BANCOLOMBIA) 📱
+                COMPRAR POR WHATSAPP (NEQUI / BANCOLOMBIA) 📱
               </button>
 
               <button
@@ -220,12 +220,12 @@ export default function CheckoutPage() {
                 disabled={!isValid || isSubmitting}
                 onClick={() => handleCreateOrder("MercadoPago")}
               >
-                PAY WITH MERCADOPAGO 💳
+                PAGAR CON MERCADOPAGO 💳
               </button>
 
               {!isValid && (
                 <p className="validation-warning">
-                  * Fill required fields to enable checkout buttons / Completa los campos obligatorios.
+                  * Completa los campos obligatorios para activar los botones de pago.
                 </p>
               )}
             </div>

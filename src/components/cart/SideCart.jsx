@@ -30,9 +30,9 @@ export default function SideCart({ openCart, setOpenCart }) {
     const coupon = await couponService.validateCoupon(couponCode);
     if (coupon) {
       setAppliedCoupon(coupon);
-      setCouponMsg({ type: "success", text: `¡Coupon ${coupon.codigo} applied!` });
+      setCouponMsg({ type: "success", text: `¡Cupón ${coupon.codigo} aplicado con éxito!` });
     } else {
-      setCouponMsg({ type: "error", text: "Invalid or expired promo code" });
+      setCouponMsg({ type: "error", text: "Código de descuento no válido o expirado." });
     }
   };
 
@@ -40,13 +40,13 @@ export default function SideCart({ openCart, setOpenCart }) {
     <aside className={`vault-side-cart ${openCart ? "open" : ""}`}>
       <div className="cart-header">
         <div className="cart-header-title">
-          <span>SHOPPING BAG / BOLSA</span>
+          <span>BOLSA DE COMPRAS</span>
           <span className="cart-item-count">({cart.length})</span>
         </div>
         <button
           className="cart-close-btn"
           onClick={() => setOpenCart(false)}
-          aria-label="Close bag / Cerrar bolsa"
+          aria-label="Cerrar bolsa"
         >
           ✕
         </button>
@@ -55,9 +55,9 @@ export default function SideCart({ openCart, setOpenCart }) {
       <div className="cart-items-container">
         {cart.length === 0 ? (
           <div className="empty-cart-state">
-            <p>Your shopping bag is empty / Tu bolsa está vacía.</p>
+            <p>Tu bolsa de compras está vacía.</p>
             <button className="btn-red-outline" onClick={() => setOpenCart(false)}>
-              EXPLORE ARCHIVE / VER CATÁLOGO
+              VER CATÁLOGO
             </button>
           </div>
         ) : (
@@ -71,7 +71,7 @@ export default function SideCart({ openCart, setOpenCart }) {
 
                 <div className="cart-item-info">
                   <h4 className="item-title">{item.nombre}</h4>
-                  {item.size && <span className="item-size-badge">SIZE: {item.size}</span>}
+                  {item.size && <span className="item-size-badge">TALLA: {item.size}</span>}
 
                   <div className="item-qty-row">
                     <div className="qty-controls">
@@ -84,7 +84,7 @@ export default function SideCart({ openCart, setOpenCart }) {
                       className="delete-item-btn"
                       onClick={() => deleteItemCompletely(item.id, item.size)}
                     >
-                      Remove / Eliminar
+                      Eliminar
                     </button>
                   </div>
                 </div>
@@ -103,11 +103,11 @@ export default function SideCart({ openCart, setOpenCart }) {
           <form className="coupon-form" onSubmit={handleApplyCoupon}>
             <input
               type="text"
-              placeholder="Promo / VIP Code"
+              placeholder="Código de descuento"
               value={couponCode}
               onChange={(e) => setCouponCode(e.target.value)}
             />
-            <button type="submit">APPLY</button>
+            <button type="submit">APLICAR</button>
           </form>
 
           {couponMsg && (
@@ -116,7 +116,7 @@ export default function SideCart({ openCart, setOpenCart }) {
 
           {appliedCoupon && (
             <div className="summary-row discount">
-              <span>Discount ({appliedCoupon.codigo}):</span>
+              <span>Descuento ({appliedCoupon.codigo}):</span>
               <span>-{formatCurrency(discountAmount)}</span>
             </div>
           )}
@@ -131,7 +131,7 @@ export default function SideCart({ openCart, setOpenCart }) {
             className="go-bag-link btn-red-outline"
             onClick={() => setOpenCart(false)}
           >
-            VIEW FULL BAG / VER RESUMEN
+            VER RESUMEN COMPLETO
           </Link>
 
           <Link
@@ -139,7 +139,7 @@ export default function SideCart({ openCart, setOpenCart }) {
             className="checkout-link btn-red"
             onClick={() => setOpenCart(false)}
           >
-            CHECKOUT / FINALIZAR COMPRA
+            FINALIZAR COMPRA
           </Link>
         </div>
       )}
