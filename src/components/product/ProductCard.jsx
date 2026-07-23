@@ -20,11 +20,10 @@ const ProductCard = memo(({ product, index, onAddToCart, navigate }) => {
   return (
     <div
       className={`vault-product-card scroll-animate ${estaAgotado ? "agotado" : ""}`}
-      style={{ transitionDelay: `${index * 0.04}s` }}
       onClick={() => navigate(`/product/${product.id}`)}
     >
       <div className="card-media-wrapper">
-        <div className="quality-pill">QUALITÉ 1.1</div>
+        <div className="brand-pill">THE VOULT</div>
         
         <img
           className="img-primary"
@@ -40,11 +39,11 @@ const ProductCard = memo(({ product, index, onAddToCart, navigate }) => {
           loading="lazy"
           decoding="async"
         />
-        {estaAgotado && <div className="overlay-agotado">AGOTADO</div>}
+        {estaAgotado && <div className="overlay-agotado">SOLD OUT / AGOTADO</div>}
       </div>
 
       <div className="card-details">
-        <span className="product-category">{product.categoria || "Prenda 1.1"}</span>
+        <span className="product-category">{product.categoria || "ARCHIVE DROP"}</span>
         <h3 className="product-title">{product.nombre}</h3>
         
         <div className="card-bottom-row">
@@ -58,7 +57,7 @@ const ProductCard = memo(({ product, index, onAddToCart, navigate }) => {
             }}
             disabled={estaAgotado}
           >
-            {estaAgotado ? "Agotado" : "Añadir +"}
+            {estaAgotado ? "SOLD OUT" : "ADD TO BAG +"}
           </button>
         </div>
       </div>

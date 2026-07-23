@@ -16,7 +16,7 @@ export default function AdminDashboard() {
   const [editId, setEditId] = useState(null);
   const [nombre, setNombre] = useState("");
   const [precio, setPrecio] = useState("");
-  const [categoria, setCategoria] = useState("Camisetas 1.1");
+  const [categoria, setCategoria] = useState("T-Shirts / Camisetas");
   const [imagenes, setImagenes] = useState([]);
   const [previewImgs, setPreviewImgs] = useState([]);
   const [uploading, setUploading] = useState(false);
@@ -90,7 +90,7 @@ export default function AdminDashboard() {
       await productService.saveProduct(productPayload, editId);
       refetchProducts();
       resetForm();
-      alert(editId ? "Prenda actualizada con éxito." : "Nueva prenda agregada al Vault.");
+      alert(editId ? "Prenda actualizada con éxito." : "Nueva prenda agregada al catálogo.");
     } catch (e) {
       console.error("Error guardando prenda:", e);
       alert("Ocurrió un error al guardar la prenda.");
@@ -103,7 +103,7 @@ export default function AdminDashboard() {
     setEditId(null);
     setNombre("");
     setPrecio("");
-    setCategoria("Camisetas 1.1");
+    setCategoria("T-Shirts / Camisetas");
     setImagenes([]);
     setPreviewImgs([]);
     setDetalles({ descripcion: "", material: "", cuidados: "" });
@@ -114,7 +114,7 @@ export default function AdminDashboard() {
     setEditId(p.id);
     setNombre(p.nombre);
     setPrecio(p.precio);
-    setCategoria(p.categoria || "Camisetas 1.1");
+    setCategoria(p.categoria || "T-Shirts / Camisetas");
 
     const imgs = p.imagenes
       ? (Array.isArray(p.imagenes) ? p.imagenes : Object.values(p.imagenes))
@@ -140,12 +140,11 @@ export default function AdminDashboard() {
       {/* HEADER */}
       <div className="admin-nav-header">
         <div className="admin-title-box">
-          <span className="badge-gold">PANEL CONTROL VIP</span>
-          <h1>THE VAULT PRESTIGE</h1>
+          <img src="/logo.jpg" alt="THE VOULT PRESTIGE" className="admin-header-logo" />
         </div>
 
-        <button className="btn-gold-outline sm" onClick={handleLogout}>
-          Cerrar Sesión 🔒
+        <button className="btn-red-outline sm" onClick={handleLogout}>
+          LOGOUT / CERRAR SESIÓN 🔒
         </button>
       </div>
 
@@ -153,14 +152,14 @@ export default function AdminDashboard() {
       <div className="dashboard-main-grid">
         {/* PRODUCT FORM */}
         <div className="admin-card-box">
-          <h2>{editId ? "Editar Prenda 1.1" : "Agregar Nueva Prenda 1.1"}</h2>
+          <h2>{editId ? "Editar Prenda / Edit Product" : "Agregar Prenda / Add Product"}</h2>
 
           <form onSubmit={handleSubmit} className="admin-product-form">
             <div className="form-group">
-              <label>Nombre de la Prenda *</label>
+              <label>Nombre de la Prenda / Product Title *</label>
               <input
                 type="text"
-                placeholder="Ej: Hoodie Balenciaga 1:1 Black"
+                placeholder="Ej: Balenciaga Heavyweight Hoodie"
                 value={nombre}
                 onChange={(e) => setNombre(e.target.value)}
                 required
@@ -180,18 +179,18 @@ export default function AdminDashboard() {
               </div>
 
               <div className="form-group">
-                <label>Categoría</label>
+                <label>Categoría / Category</label>
                 <select value={categoria} onChange={(e) => setCategoria(e.target.value)}>
-                  <option value="Camisetas 1.1">Camisetas 1.1</option>
-                  <option value="Hoodies 1.1">Hoodies 1.1</option>
-                  <option value="Chaquetas & abrigos 1.1">Chaquetas 1.1</option>
-                  <option value="Conjuntos 1.1">Conjuntos 1.1</option>
+                  <option value="T-Shirts / Camisetas">T-Shirts / Camisetas</option>
+                  <option value="Hoodies & Sweatshirts">Hoodies & Sweatshirts</option>
+                  <option value="Jackets & Outerwear / Chaquetas">Jackets & Outerwear / Chaquetas</option>
+                  <option value="Sets & Tracksuits / Conjuntos">Sets & Tracksuits / Conjuntos</option>
                 </select>
               </div>
             </div>
 
             <div className="form-group">
-              <label>Descripción Qualité 1.1</label>
+              <label>Descripción / Details</label>
               <textarea
                 placeholder="Detalles de bordado, confección..."
                 value={detalles.descripcion}
@@ -203,7 +202,7 @@ export default function AdminDashboard() {
               <label>Material & Gramaje</label>
               <input
                 type="text"
-                placeholder="Ej: 100% Algodón Pesado 450 GSM"
+                placeholder="Ej: 100% Algodón Pesado 500 GSM"
                 value={detalles.material}
                 onChange={(e) => setDetalles({ ...detalles, material: e.target.value })}
               />
@@ -211,7 +210,7 @@ export default function AdminDashboard() {
 
             {/* SIZES */}
             <div className="form-group">
-              <label>Tallas Disponibles:</label>
+              <label>Tallas Disponibles / Available Sizes:</label>
               <div className="tallas-toggle-grid">
                 {["XS", "S", "M", "L", "XL", "2XL"].map((t) => (
                   <button
@@ -243,12 +242,12 @@ export default function AdminDashboard() {
             )}
 
             <div className="form-actions">
-              <button type="submit" className="btn-gold" disabled={uploading}>
-                {uploading ? "SUBIENDO PRENDA..." : editId ? "GUARDAR CAMBIOS" : "AÑADIR AL CATÁLOGO 1.1"}
+              <button type="submit" className="btn-red" disabled={uploading}>
+                {uploading ? "UPLOADING..." : editId ? "GUARDAR CAMBIOS" : "AÑADIR AL CATÁLOGO"}
               </button>
 
               {editId && (
-                <button type="button" className="btn-gold-outline" onClick={resetForm}>
+                <button type="button" className="btn-red-outline" onClick={resetForm}>
                   Cancelar Edición
                 </button>
               )}

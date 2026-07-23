@@ -62,7 +62,7 @@ export default function DashboardPedidos() {
                   <td>{p.cliente_nombre}</td>
                   <td>{p.cliente_telefono}</td>
                   <td>{p.cliente_ciudad} - {p.cliente_direccion}</td>
-                  <td className="gold-text-bold">{formatCurrency(p.total)}</td>
+                  <td className="red-text-bold">{formatCurrency(p.total)}</td>
                   <td>
                     <select
                       value={p.estado || "Pendiente"}

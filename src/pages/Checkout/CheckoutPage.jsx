@@ -16,7 +16,6 @@ export default function CheckoutPage() {
     notas: "",
   });
 
-
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const isValid =
@@ -28,7 +27,6 @@ export default function CheckoutPage() {
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-
 
   const handleCreateOrder = async (metodoPago) => {
     if (!isValid) return;
@@ -49,8 +47,7 @@ export default function CheckoutPage() {
       // 1. Save order in Supabase
       const createdOrder = await orderService.createOrder(orderPayload);
 
-
-      // 3. Process payment method
+      // 2. Process payment method
       if (metodoPago === "WhatsApp") {
         const url = buildWhatsAppOrderUrl({
           cliente: form,
@@ -89,24 +86,24 @@ export default function CheckoutPage() {
   if (cart.length === 0) {
     return (
       <div className="checkout-empty-container container">
-        <h2>No tienes prendas en tu bolsa para checkout.</h2>
+        <h2>Your bag is empty / Tu bolsa está vacía para el checkout.</h2>
       </div>
     );
   }
 
   return (
     <div className="checkout-page-container container">
-      <h1 className="checkout-page-title">CHECKOUT Y DESPACHO VIP</h1>
+      <h1 className="checkout-page-title">CHECKOUT & DISPATCH / DESPACHO</h1>
 
       <div className="checkout-grid">
-        {/* LEFT COLUMN: CUSTOMER FORM & INVOICE */}
+        {/* LEFT COLUMN: CUSTOMER FORM */}
         <div className="checkout-form-col">
           <div className="checkout-card">
-            <h3 className="card-heading">1. DATOS DE ENVÍO Y CONTACTO</h3>
+            <h3 className="card-heading">1. SHIPPING & CONTACT DETAILS / DATOS DE ENVÍO</h3>
 
             <div className="form-group-row">
               <div className="form-field">
-                <label>Nombre y Apellidos *</label>
+                <label>Full Name / Nombre Completo *</label>
                 <input
                   type="text"
                   name="nombre"
@@ -117,7 +114,7 @@ export default function CheckoutPage() {
               </div>
 
               <div className="form-field">
-                <label>Teléfono de Contacto (WhatsApp) *</label>
+                <label>Phone / Contacto WhatsApp *</label>
                 <input
                   type="tel"
                   name="telefono"
@@ -130,7 +127,7 @@ export default function CheckoutPage() {
 
             <div className="form-group-row">
               <div className="form-field">
-                <label>Ciudad de Envío *</label>
+                <label>City / Ciudad *</label>
                 <input
                   type="text"
                   name="ciudad"
@@ -141,7 +138,7 @@ export default function CheckoutPage() {
               </div>
 
               <div className="form-field">
-                <label>Correo Electrónico (para seguimiento)</label>
+                <label>Email (Optional / Opcional)</label>
                 <input
                   type="email"
                   name="email"
@@ -153,23 +150,22 @@ export default function CheckoutPage() {
             </div>
 
             <div className="form-field full-width">
-              <label>Dirección de Residencia / Barrio *</label>
+              <label>Shipping Address / Dirección de Residencia *</label>
               <input
                 type="text"
                 name="direccion"
-                placeholder="Calle / Carrera / Apto / Conjunto"
+                placeholder="Calle / Carrera / Apt / Conjunto"
                 value={form.direccion}
                 onChange={handleChange}
               />
             </div>
           </div>
-
         </div>
 
         {/* RIGHT COLUMN: SUMMARY & PAYMENT SELECTION */}
         <div className="checkout-summary-col">
           <div className="checkout-card sticky-card">
-            <h3 className="card-heading">2. RESUMEN DE COMPRA</h3>
+            <h3 className="card-heading">2. ORDER SUMMARY / RESUMEN</h3>
 
             <div className="checkout-items-list">
               {cart.map((item) => (
@@ -180,7 +176,7 @@ export default function CheckoutPage() {
                   />
                   <div className="mini-info">
                     <span className="mini-title">{item.nombre}</span>
-                    <span className="mini-size">Talla: {item.size || "Única"} x {item.qty}</span>
+                    <span className="mini-size">SIZE: {item.size || "STD"} x {item.qty}</span>
                   </div>
                   <span className="mini-price">
                     {formatCurrency((item.itemprice || item.precio) * item.qty)}
@@ -197,39 +193,39 @@ export default function CheckoutPage() {
 
               {appliedCoupon && (
                 <div className="breakdown-row discount">
-                  <span>Descuento ({appliedCoupon.codigo}):</span>
+                  <span>Discount ({appliedCoupon.codigo}):</span>
                   <span>-{formatCurrency(discountAmount)}</span>
                 </div>
               )}
 
               <div className="breakdown-row total">
-                <span>TOTAL A PAGAR:</span>
-                <span className="gold-total-val">{formatCurrency(total)}</span>
+                <span>TOTAL:</span>
+                <span className="red-total-val">{formatCurrency(total)}</span>
               </div>
             </div>
 
             <div className="payment-options-box">
-              <h4 className="payment-heading">SELECCIONA MÉTODO DE PAGO:</h4>
+              <h4 className="payment-heading">PAYMENT METHOD / MÉTODO DE PAGO:</h4>
 
               <button
-                className="btn-gold full-btn"
+                className="btn-red full-btn"
                 disabled={!isValid || isSubmitting}
                 onClick={() => handleCreateOrder("WhatsApp")}
               >
-                COMPRAR POR WHATSAPP (NEQUI / BANCOLOMBIA) 📱
+                ORDER VIA WHATSAPP (NEQUI / BANCOLOMBIA) 📱
               </button>
 
               <button
-                className="btn-gold-outline full-btn"
+                className="btn-red-outline full-btn"
                 disabled={!isValid || isSubmitting}
                 onClick={() => handleCreateOrder("MercadoPago")}
               >
-                PAGAR CON MERCADOPAGO 💳
+                PAY WITH MERCADOPAGO 💳
               </button>
 
               {!isValid && (
                 <p className="validation-warning">
-                  * Completa los campos obligatorios para activar los botones de pago.
+                  * Fill required fields to enable checkout buttons / Completa los campos obligatorios.
                 </p>
               )}
             </div>

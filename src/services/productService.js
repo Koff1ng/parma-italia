@@ -1,10 +1,10 @@
 import { supabase } from "../lib/supabase";
 
-// Fallback seed catalog for The Vault Prestige (Ropa 1.1)
+// Authentic luxury mock catalog for THE VOULT PRESTIGE
 export const MOCK_PRODUCTS = [
   {
     id: "TVP-001",
-    nombre: "Hoodie Balenciaga Oversized Crest 1:1 Gold Edition",
+    nombre: "Balenciaga Crest Heavyweight Hoodie",
     precio: 380000,
     url_imagen: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80",
     imagenes: [
@@ -14,16 +14,16 @@ export const MOCK_PRODUCTS = [
     tallas: { XS: true, S: true, M: true, L: true, XL: true, "2XL": true },
     stock: { XS: 5, S: 8, M: 12, L: 10, XL: 6, "2XL": 4 },
     detalles: {
-      descripcion: "Hoodie Balenciaga calidad 1:1 idéntica a la versión retail. Confeccionada en franela pesada de 500g, bordado frontal en hilo metalizado y etiquetas de lavado auténticas con código QR escaneable.",
-      material: "100% Algodón Francés Peinado (500 GSM)",
-      cuidados: "Lavar al revés con agua fría, no planchar directamente el bordado."
+      descripcion: "Confeccionado en algodón peinado de 500 GSM con silueta oversized de alta costura, bordado frontal metálico y acabados artesanales de archivo. Crafted with 500 GSM heavyweight French terry cotton.",
+      material: "100% French Terry Cotton (500 GSM)",
+      cuidados: "Dry clean only or cold wash inside out / Lavar en seco o agua fría al revés."
     },
-    categoria: "Hoodies 1.1",
+    categoria: "Hoodies & Sweatshirts",
     es_destacado: true
   },
   {
     id: "TVP-002",
-    nombre: "Camiseta Chrome Hearts Horseshoe Logo 1:1 Black",
+    nombre: "Chrome Hearts Horseshoe Logo Tee",
     precio: 240000,
     url_imagen: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1000&q=80",
     imagenes: [
@@ -33,16 +33,16 @@ export const MOCK_PRODUCTS = [
     tallas: { XS: false, S: true, M: true, L: true, XL: true, "2XL": false },
     stock: { XS: 0, S: 6, M: 10, L: 8, XL: 5, "2XL": 0 },
     detalles: {
-      descripcion: "Camiseta Chrome Hearts edición 1:1 con serigrafía en relieve de alta densidad en espalda y mangas. Incluye marquilla de cuello personalizada de la firma y bolsa anti-polvo.",
-      material: "100% Algodón Premium Heavyweight (280 GSM)",
-      cuidados: "Lavar en ciclo delicado, no usar secadora."
+      descripcion: "Camiseta de corte relajado con serigrafía de alta densidad en relieve y detalles característicos de archivo en mangas y espalda. Premium luxury streetwear aesthetic.",
+      material: "100% Organic Heavy Cotton (280 GSM)",
+      cuidados: "Machine wash cold inside out / Lavado delicado en frío."
     },
-    categoria: "Camisetas 1.1",
+    categoria: "T-Shirts / Camisetas",
     es_destacado: true
   },
   {
     id: "TVP-003",
-    nombre: "Chaqueta Louis Vuitton Monogram Vault Puffer 1:1",
+    nombre: "Louis Vuitton Monogram Archive Puffer Jacket",
     precio: 750000,
     url_imagen: "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=1000&q=80",
     imagenes: [
@@ -52,16 +52,16 @@ export const MOCK_PRODUCTS = [
     tallas: { XS: false, S: true, M: true, L: true, XL: true, "2XL": true },
     stock: { XS: 0, S: 3, M: 5, L: 4, XL: 2, "2XL": 1 },
     detalles: {
-      descripcion: "Chaqueta acolchada Louis Vuitton Monogram 1.1. Acabado impermeable termosellado, herrajes grabados en bronce envejecido y plumón térmico de ganso para máximo aislamiento.",
-      material: "Poliamida técnica impermeable & Relleno térmico ultra-liviano",
-      cuidados: "Lavado en seco profesional exclusivamente."
+      descripcion: "Chaqueta acolchada de alto rendimiento con patrón Monogram jacquard mate, herrajes de bronce macizo y aislamiento térmico de plumas. High performance weather resistant shell.",
+      material: "Technical Polyamide & Goose Down Fill",
+      cuidados: "Professional dry clean only / Lavado profesional en seco."
     },
-    categoria: "Chaquetas & abrigos 1.1",
+    categoria: "Jackets & Outerwear / Chaquetas",
     es_destacado: true
   },
   {
     id: "TVP-004",
-    nombre: "Conjunto Trapstar Shooters Tracksuit 1:1 Black/Gold",
+    nombre: "Trapstar Shooters Premium Tracksuit",
     precio: 460000,
     url_imagen: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
     imagenes: [
@@ -71,16 +71,16 @@ export const MOCK_PRODUCTS = [
     tallas: { XS: true, S: true, M: true, L: true, XL: true, "2XL": false },
     stock: { XS: 4, S: 7, M: 9, L: 6, XL: 3, "2XL": 0 },
     detalles: {
-      descripcion: "Sudadera y pantaloneta Trapstar London edición 1.1 con letras de toalla en relieve Chenille y detalles dorados refractivos. Ajuste fino de corte urbano.",
-      material: "Mezcla de Algodón Cepillado & Poliéster de Alta Resistencia (400 GSM)",
-      cuidados: "Lavar a máquina en programa frío con prendas del mismo color."
+      descripcion: "Conjunto exclusivo de 2 piezas con parches en chenille de toalla de alto relieve y cremalleras de precisión. Signature London street style collection.",
+      material: "Cotton Blend Brushed Fleece (420 GSM)",
+      cuidados: "Wash cold, hang dry / Lavar con agua fría, secar colgado."
     },
-    categoria: "Conjuntos 1.1",
+    categoria: "Sets & Tracksuits / Conjuntos",
     es_destacado: true
   },
   {
     id: "TVP-005",
-    nombre: "Camiseta Gucci Blade Logo Oversized Tee 1:1 White",
+    nombre: "Gucci Blade Edition Oversized Tee",
     precio: 250000,
     url_imagen: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=1000&q=80",
     imagenes: [
@@ -90,11 +90,11 @@ export const MOCK_PRODUCTS = [
     tallas: { XS: true, S: true, M: true, L: true, XL: true, "2XL": true },
     stock: { XS: 3, S: 6, M: 10, L: 8, XL: 4, "2XL": 2 },
     detalles: {
-      descripcion: "Camiseta Gucci Blade print calidad 1:1. Algodón orgánico suave de tacto sedoso con estampado en tinta plastisol importada.",
-      material: "100% Algodón Orgánico Italiano",
-      cuidados: "No retorcer, secar colgado a la sombra."
+      descripcion: "Camiseta de silueta contemporánea fabricada en algodón orgánico mercerizado de caída estructurada. Contemporary luxury drop edition.",
+      material: "100% Mercerized Organic Cotton",
+      cuidados: "Gentle wash / Lavado suave."
     },
-    categoria: "Camisetas 1.1",
+    categoria: "T-Shirts / Camisetas",
     es_destacado: false
   }
 ];
@@ -110,18 +110,12 @@ export const productService = {
         .select("*")
         .order("created_at", { ascending: false });
 
-      if (error) {
-        console.warn("Supabase fetch error, fallback to mock catalog:", error.message);
-        return MOCK_PRODUCTS;
-      }
-
-      if (!data || data.length === 0) {
+      if (error || !data || data.length === 0) {
         return MOCK_PRODUCTS;
       }
 
       return data;
     } catch (e) {
-      console.warn("Unexpected error fetching products, using mock catalog:", e);
       return MOCK_PRODUCTS;
     }
   },

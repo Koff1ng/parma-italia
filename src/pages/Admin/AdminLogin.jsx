@@ -56,17 +56,16 @@ export default function AdminLogin() {
     <div className="admin-login-wrapper">
       <div className="admin-login-card">
         <div className="login-logo">
-          <span>THE VAULT</span>
-          <span className="gold-sub">PRESTIGE ADMIN</span>
+          <img src="/logo.jpg" alt="THE VOULT PRESTIGE" className="admin-logo-img" />
         </div>
 
-        <h2>PANEL DE CONTROL</h2>
+        <h2>ADMIN PORTAL / PANEL DE CONTROL</h2>
 
         {error && <div className="admin-error-box">{error}</div>}
 
         <form onSubmit={handleLogin} className="admin-login-form">
           <div className="admin-input-group">
-            <label>Correo Electrónico Admin</label>
+            <label>Admin Email / Correo Electrónico</label>
             <input
               type="text"
               placeholder="admin@thevaultprestige.com"
@@ -77,7 +76,7 @@ export default function AdminLogin() {
           </div>
 
           <div className="admin-input-group">
-            <label>Contraseña</label>
+            <label>Password / Contraseña</label>
             <input
               type="password"
               placeholder="••••••••"
@@ -87,12 +86,12 @@ export default function AdminLogin() {
             />
           </div>
 
-          <button type="submit" className="btn-gold" disabled={loading}>
-            {loading ? "VERIFICANDO..." : "INGRESAR AL PANEL VIP"}
+          <button type="submit" className="btn-red full-btn" disabled={loading}>
+            {loading ? "VERIFYING..." : "ENTER PORTAL / INGRESAR AL PANEL"}
           </button>
         </form>
 
-        <p className="admin-hint">Clave por defecto de inicio: admin / vault2026</p>
+        <p className="admin-hint">Default login / Clave por defecto: admin / vault2026</p>
       </div>
     </div>
   );

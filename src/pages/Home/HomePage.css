@@ -10,55 +10,60 @@
 
 .catalog-title {
   font-family: var(--font-heading);
-  font-size: 2.2rem;
-  color: #ffffff;
-  margin-top: 10px;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+  margin-top: 12px;
+  text-transform: uppercase;
 }
 
-.gold-divider {
-  width: 60px;
-  height: 3px;
-  background: var(--accent-gold-gradient);
-  margin: 14px auto 0;
-  border-radius: 2px;
+.red-divider {
+  width: 50px;
+  height: 2px;
+  background: var(--accent-red);
+  margin: 16px auto 0;
+  border-radius: 1px;
 }
 
 .category-tabs {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
   margin-bottom: 40px;
 }
 
 .cat-tab-btn {
-  background: var(--bg-surface, #0f0f14);
+  background: var(--bg-surface, #0B0B0E);
   border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 2px;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  transition: var(--transition-fast);
 }
 
 .cat-tab-btn.active, .cat-tab-btn:hover {
-  background: var(--accent-gold);
-  color: #000;
-  border-color: var(--accent-gold);
+  background: var(--accent-red);
+  color: #FFFFFF;
+  border-color: var(--accent-red);
 }
 
 .products-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
+  gap: 24px;
   margin-bottom: 48px;
 }
 
 .card-skeleton {
   background: var(--bg-surface);
-  border-radius: 8px;
+  border-radius: 2px;
   height: 420px;
   overflow: hidden;
   animation: skeletonPulse 1.5s infinite;
@@ -66,7 +71,7 @@
 
 .skeleton-img {
   height: 280px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .skeleton-body {
@@ -79,7 +84,7 @@
 .skeleton-line {
   height: 12px;
   background: rgba(255, 255, 255, 0.08);
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 .skeleton-line.short { width: 40%; }
@@ -95,7 +100,9 @@
   text-align: center;
   padding: 60px 20px;
   color: var(--text-muted);
-  font-size: 1.1rem;
+  font-size: 1rem;
+  font-family: var(--font-heading);
+  letter-spacing: 1px;
 }
 
 .vault-pagination {
@@ -108,24 +115,33 @@
 .page-btn {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
-  color: #fff;
+  color: #FFFFFF;
   padding: 10px 20px;
-  border-radius: 4px;
+  border-radius: 2px;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
   cursor: pointer;
+  transition: var(--transition-fast);
 }
 
 .page-btn:hover:not(:disabled) {
-  border-color: var(--accent-gold);
-  color: var(--accent-gold);
+  border-color: var(--accent-red);
+  color: var(--accent-red);
+  background: var(--accent-red-subtle);
 }
 
 .page-btn:disabled {
-  opacity: 0.4;
+  opacity: 0.3;
   cursor: not-allowed;
 }
 
 .page-info {
-  font-size: 0.9rem;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
   color: var(--text-secondary);
 }
 
@@ -138,10 +154,10 @@
 @media (max-width: 768px) {
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 14px;
   }
   .catalog-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 }
 

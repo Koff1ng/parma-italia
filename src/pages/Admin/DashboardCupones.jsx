@@ -54,7 +54,7 @@ export default function DashboardCupones() {
           <option value="porcentaje">Porcentaje (%)</option>
           <option value="fijo">Monto Fijo ($ COP)</option>
         </select>
-        <button type="submit" className="btn-gold sm">Crear Cupón</button>
+        <button type="submit" className="btn-red sm">Crear Cupón</button>
       </form>
 
       <div className="coupons-grid-list">

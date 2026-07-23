@@ -30,9 +30,9 @@ export default function SideCart({ openCart, setOpenCart }) {
     const coupon = await couponService.validateCoupon(couponCode);
     if (coupon) {
       setAppliedCoupon(coupon);
-      setCouponMsg({ type: "success", text: `¡Cupón ${coupon.codigo} aplicado!` });
+      setCouponMsg({ type: "success", text: `¡Coupon ${coupon.codigo} applied!` });
     } else {
-      setCouponMsg({ type: "error", text: "Código de descto. no válido o expirado" });
+      setCouponMsg({ type: "error", text: "Invalid or expired promo code" });
     }
   };
 
@@ -40,13 +40,13 @@ export default function SideCart({ openCart, setOpenCart }) {
     <aside className={`vault-side-cart ${openCart ? "open" : ""}`}>
       <div className="cart-header">
         <div className="cart-header-title">
-          <span>BOLSA DE COMPRAS</span>
+          <span>SHOPPING BAG / BOLSA</span>
           <span className="cart-item-count">({cart.length})</span>
         </div>
         <button
           className="cart-close-btn"
           onClick={() => setOpenCart(false)}
-          aria-label="Cerrar bolsa"
+          aria-label="Close bag / Cerrar bolsa"
         >
           ✕
         </button>
@@ -55,9 +55,9 @@ export default function SideCart({ openCart, setOpenCart }) {
       <div className="cart-items-container">
         {cart.length === 0 ? (
           <div className="empty-cart-state">
-            <p>Tu bolsa de compras está vacía.</p>
-            <button className="btn-gold-outline" onClick={() => setOpenCart(false)}>
-              Ver Catálogo 1.1
+            <p>Your shopping bag is empty / Tu bolsa está vacía.</p>
+            <button className="btn-red-outline" onClick={() => setOpenCart(false)}>
+              EXPLORE ARCHIVE / VER CATÁLOGO
             </button>
           </div>
         ) : (
@@ -71,7 +71,7 @@ export default function SideCart({ openCart, setOpenCart }) {
 
                 <div className="cart-item-info">
                   <h4 className="item-title">{item.nombre}</h4>
-                  {item.size && <span className="item-size-badge">Talla: {item.size}</span>}
+                  {item.size && <span className="item-size-badge">SIZE: {item.size}</span>}
 
                   <div className="item-qty-row">
                     <div className="qty-controls">
@@ -84,7 +84,7 @@ export default function SideCart({ openCart, setOpenCart }) {
                       className="delete-item-btn"
                       onClick={() => deleteItemCompletely(item.id, item.size)}
                     >
-                      Remover
+                      Remove / Eliminar
                     </button>
                   </div>
                 </div>
@@ -103,11 +103,11 @@ export default function SideCart({ openCart, setOpenCart }) {
           <form className="coupon-form" onSubmit={handleApplyCoupon}>
             <input
               type="text"
-              placeholder="Código de descuento VIP"
+              placeholder="Promo / VIP Code"
               value={couponCode}
               onChange={(e) => setCouponCode(e.target.value)}
             />
-            <button type="submit">Aplicar</button>
+            <button type="submit">APPLY</button>
           </form>
 
           {couponMsg && (
@@ -116,30 +116,30 @@ export default function SideCart({ openCart, setOpenCart }) {
 
           {appliedCoupon && (
             <div className="summary-row discount">
-              <span>Descuento ({appliedCoupon.codigo}):</span>
+              <span>Discount ({appliedCoupon.codigo}):</span>
               <span>-{formatCurrency(discountAmount)}</span>
             </div>
           )}
 
           <div className="summary-row total">
-            <span>Total:</span>
-            <span className="gold-total">{formatCurrency(total)}</span>
+            <span>TOTAL:</span>
+            <span className="red-total">{formatCurrency(total)}</span>
           </div>
 
           <Link
             to="/bag"
-            className="go-bag-link btn-gold-outline"
+            className="go-bag-link btn-red-outline"
             onClick={() => setOpenCart(false)}
           >
-            VER RESUMEN COMPLETO
+            VIEW FULL BAG / VER RESUMEN
           </Link>
 
           <Link
             to="/checkout"
-            className="checkout-link btn-gold"
+            className="checkout-link btn-red"
             onClick={() => setOpenCart(false)}
           >
-            FINALIZAR COMPRA VIP
+            CHECKOUT / FINALIZAR COMPRA
           </Link>
         </div>
       )}

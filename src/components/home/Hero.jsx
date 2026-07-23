@@ -5,7 +5,7 @@ export default function Hero() {
   const scrollToCatalog = () => {
     const catalogSection = document.getElementById("catalog-section");
     if (catalogSection) {
-      const offset = 80;
+      const offset = 70;
       const elementPosition = catalogSection.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
       window.scrollTo({
@@ -17,7 +17,7 @@ export default function Hero() {
 
   return (
     <section className="vault-hero">
-      {/* 🎥 VIDEO BACKGROUND - thevault.mp4 */}
+      {/* 🎥 VIDEO BACKGROUND */}
       <video
         className="hero-video-bg"
         autoPlay
@@ -30,29 +30,30 @@ export default function Hero() {
         <source src="/thevault.mp4" type="video/mp4" />
       </video>
 
-      {/* Dark overlay for text readability */}
+      {/* Dark gradient overlay */}
       <div className="hero-video-overlay"></div>
 
       <div className="hero-content container">
         <div className="hero-badge">
-          <span className="badge-gold">QUALITÉ 1.1 • AUTHENTIC DROP</span>
+          <span className="badge-red">LIMITED ARCHIVE DROPS • EDICIÓN EXCLUSIVA</span>
         </div>
 
-        <h1 className="hero-title">
-          THE VAULT <span className="gold-text">PRESTIGE</span>
-        </h1>
+        {/* LOGO IMAGE DISPLAY IN HERO */}
+        <div className="hero-logo-box">
+          <img src="/logo.jpg" alt="THE VOULT PRESTIGE" className="hero-logo-img" />
+        </div>
 
         <p className="hero-subtitle">
-          Ediciones limitadas de streetwear de lujo y alta costura 1:1. 
-          Mismas telas, mismos bordados, idéntico peso y acabados impecables.
+          CURATED HIGH-END STREETWEAR & ARCHIVE LUXURY APPAREL.<br />
+          EDICIONES LIMITADAS DE ALTA COSTURA CON ACABADOS DE AUTOR.
         </p>
 
         <div className="hero-actions">
-          <button className="btn-gold" onClick={scrollToCatalog}>
-            EXPLORAR EL VAULT 🛍️
+          <button className="btn-red" onClick={scrollToCatalog}>
+            EXPLORE THE VAULT / EXPLORAR 🛍️
           </button>
-          <Link to="/about" className="btn-gold-outline">
-            NUESTRO MANIFIESTO
+          <Link to="/about" className="btn-red-outline">
+            MANIFESTO / MANIFIESTO
           </Link>
         </div>
       </div>

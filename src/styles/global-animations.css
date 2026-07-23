@@ -1,13 +1,12 @@
 /* ============================================
-   ANIMACIONES GLOBALES DE SCROLL
-   Aplicadas a toda la página
+   SUBTLE & ELEGANT ANIMATIONS
+   Clean, minimal, high-fashion transitions
 ============================================ */
 
 .scroll-animate {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(15px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .scroll-animate.animate-in {
@@ -15,67 +14,16 @@
   transform: translateY(0);
 }
 
-/* Variaciones de animación */
 .scroll-animate-fade {
   opacity: 0;
-  transition: opacity 0.6s ease-out;
+  transition: opacity 0.4s ease-out;
 }
 
 .scroll-animate-fade.animate-in {
   opacity: 1;
 }
 
-.scroll-animate-slide-left {
-  opacity: 0;
-  transform: translateX(-40px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+/* Subtle image hover fade without aggressive scale jumps */
+.card-media-wrapper img {
+  transition: opacity 0.3s ease;
 }
-
-.scroll-animate-slide-left.animate-in {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.scroll-animate-slide-right {
-  opacity: 0;
-  transform: translateX(40px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.scroll-animate-slide-right.animate-in {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.scroll-animate-scale {
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.scroll-animate-scale.animate-in {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Delay para animaciones escalonadas */
-.scroll-animate-delay-1 {
-  transition-delay: 0.1s;
-}
-
-.scroll-animate-delay-2 {
-  transition-delay: 0.2s;
-}
-
-.scroll-animate-delay-3 {
-  transition-delay: 0.3s;
-}
-
-.scroll-animate-delay-4 {
-  transition-delay: 0.4s;
-}
-
-

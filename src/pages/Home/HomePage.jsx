@@ -12,15 +12,27 @@ export default function HomePage({ setOpenCart }) {
   const { products, loading } = useProducts();
   const navigate = useNavigate();
 
-  const [selectedCategory, setSelectedCategory] = useState("Todos");
+  const [selectedCategory, setSelectedCategory] = useState("Todos / All");
   const [selectedProductForSize, setSelectedProductForSize] = useState(null);
   const [page, setPage] = useState(1);
   const productsPerPage = 8;
 
+  const categoriesList = [
+    { label: "Todos / All", value: "Todos / All" },
+    { label: "T-Shirts / Camisetas", value: "T-Shirts / Camisetas" },
+    { label: "Hoodies & Sweatshirts", value: "Hoodies & Sweatshirts" },
+    { label: "Jackets & Outerwear", value: "Jackets & Outerwear / Chaquetas" },
+    { label: "Sets & Tracksuits", value: "Sets & Tracksuits / Conjuntos" },
+  ];
+
   // Filter products by category tab
   const filteredProducts = useMemo(() => {
-    if (selectedCategory === "Todos") return products;
-    return products.filter((p) => p.categoria?.toLowerCase() === selectedCategory.toLowerCase());
+    if (selectedCategory === "Todos / All") return products;
+    return products.filter((p) => {
+      const cat = p.categoria?.toLowerCase() || "";
+      const selected = selectedCategory.toLowerCase();
+      return cat.includes(selected.split(" / ")[0].toLowerCase()) || cat === selected;
+    });
   }, [products, selectedCategory]);
 
   const totalPages = useMemo(
@@ -62,23 +74,23 @@ export default function HomePage({ setOpenCart }) {
 
       <section id="catalog-section" className="catalog-container container">
         <div className="catalog-header">
-          <span className="badge-gold">EXCLUSIVITÉ 1.1</span>
-          <h2 className="catalog-title">COLECCIÓN RECIENTE & DROPS</h2>
-          <div className="gold-divider"></div>
+          <span className="badge-red">EXCLUSIVITÉ • ARCHIVE DROPS</span>
+          <h2 className="catalog-title">NEW ARRIVALS / NUEVA COLECCIÓN</h2>
+          <div className="red-divider"></div>
         </div>
 
         {/* CATEGORY FILTER TABS */}
         <div className="category-tabs">
-          {["Todos", "Camisetas 1.1", "Hoodies 1.1", "Chaquetas & abrigos 1.1", "Conjuntos 1.1"].map((cat) => (
+          {categoriesList.map((cat) => (
             <button
-              key={cat}
-              className={`cat-tab-btn ${selectedCategory === cat ? "active" : ""}`}
+              key={cat.value}
+              className={`cat-tab-btn ${selectedCategory === cat.value ? "active" : ""}`}
               onClick={() => {
-                setSelectedCategory(cat);
+                setSelectedCategory(cat.value);
                 setPage(1);
               }}
             >
-              {cat}
+              {cat.label}
             </button>
           ))}
         </div>
@@ -102,7 +114,7 @@ export default function HomePage({ setOpenCart }) {
         {/* EMPTY STATE */}
         {!loading && filteredProducts.length === 0 && (
           <div className="empty-catalog-msg">
-            <p>No se encontraron prendas en esta categoría por el momento.</p>
+            <p>No items found in this category / No se encontraron prendas en esta categoría.</p>
           </div>
         )}
 
@@ -129,17 +141,17 @@ export default function HomePage({ setOpenCart }) {
                   onClick={() => setPage((p) => p - 1)}
                   className="page-btn"
                 >
-                  ← Anterior
+                  ← PREVIOUS / ANTERIOR
                 </button>
                 <span className="page-info">
-                  Página {page} de {totalPages}
+                  PAGE / PÁGINA {page} DE {totalPages}
                 </span>
                 <button
                   disabled={page === totalPages}
                   onClick={() => setPage((p) => p + 1)}
                   className="page-btn"
                 >
-                  Siguiente →
+                  NEXT / SIGUIENTE →
                 </button>
               </div>
             )}
