@@ -37,18 +37,8 @@ export function ProductsProvider({ children }) {
   };
 
   useEffect(() => {
-    // Attempt cache read for instant initial load
-    const cached = sessionStorage.getItem("tvp_products_cache");
-    if (cached) {
-      try {
-        const parsed = JSON.parse(cached);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          setProducts(parsed);
-        }
-      } catch (e) {
-        // Ignore cache parse error
-      }
-    }
+    // Limpia el caché viejo para que siempre cargue los productos actualizados
+    sessionStorage.removeItem("tvp_products_cache");
 
     refreshAll();
 
