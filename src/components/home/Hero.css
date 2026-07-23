@@ -1,27 +1,45 @@
+/* ===========================
+   🎥 HERO - FULLSCREEN VIDEO
+=========================== */
 .vault-hero {
   position: relative;
-  min-height: 85vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 100px;
-  background: radial-gradient(circle at center, #181824 0%, #070709 70%);
   overflow: hidden;
   border-bottom: 1px solid var(--border-subtle);
 }
 
-.hero-background-gradient {
+/* Fullscreen video background */
+.hero-video-bg {
   position: absolute;
-  top: -20%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(0,0,0,0) 70%);
-  pointer-events: none;
-  filter: blur(40px);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: translate3d(0, 0, 0); /* GPU acceleration */
+  z-index: 0;
 }
 
+/* Dark overlay for text readability */
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.35) 50%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ===========================
+   ✨ HERO CONTENT
+=========================== */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -31,17 +49,20 @@
 
 .hero-badge {
   margin-bottom: 24px;
+  animation: fadeInDown 1s ease 0.3s backwards;
 }
 
 .hero-title {
   font-family: var(--font-heading, "Cinzel", serif);
-  font-size: 3.8rem;
+  font-size: 4.5rem;
   font-weight: 900;
-  letter-spacing: 4px;
-  line-height: 1.15;
+  letter-spacing: 5px;
+  line-height: 1.1;
   color: #FFFFFF;
   margin-bottom: 20px;
   text-transform: uppercase;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1.2s ease 0.5s backwards;
 }
 
 .gold-text {
@@ -51,11 +72,13 @@
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.88);
   max-width: 650px;
-  margin: 0 auto 36px;
-  line-height: 1.7;
+  margin: 0 auto 40px;
+  line-height: 1.75;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1.2s ease 0.7s backwards;
 }
 
 .hero-actions {
@@ -64,14 +87,60 @@
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
+  animation: fadeInUp 1.2s ease 0.9s backwards;
 }
 
+/* ===========================
+   🎞️ ANIMATIONS
+=========================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===========================
+   📱 RESPONSIVE
+=========================== */
 @media (max-width: 768px) {
+  .vault-hero {
+    min-height: 90vh;
+  }
+
   .hero-title {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
+    letter-spacing: 3px;
   }
 
   .hero-subtitle {
     font-size: 0.95rem;
+    padding: 0 12px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .hero-actions .btn-gold,
+  .hero-actions .btn-gold-outline {
+    width: 100%;
+    max-width: 300px;
   }
 }

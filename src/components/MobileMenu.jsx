@@ -92,7 +92,7 @@ export default function MobileMenu() {
       <nav className={`mobile-menu ${isOpen ? "open" : ""}`}>
         <div className="mobile-menu-header">
           <Link to="/" className="mobile-menu-logo" onClick={() => setIsOpen(false)}>
-            PARMA ITALIA
+            THE VAULT PRESTIGE
           </Link>
           <button
             className="mobile-menu-close"

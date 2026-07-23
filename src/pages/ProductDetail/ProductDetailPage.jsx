@@ -1,4 +1,4 @@
-import { useParams } from "react";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { productService } from "../../services/productService";
 import { useCart } from "../../context/CartContext";

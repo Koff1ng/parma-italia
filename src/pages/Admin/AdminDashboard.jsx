@@ -6,7 +6,6 @@ import { formatCurrency } from "../../utils/formatters";
 
 import DashboardPedidos from "./DashboardPedidos";
 import DashboardCupones from "./DashboardCupones";
-import DashboardFacturas from "./DashboardFacturas";
 
 import "./Admin.css";
 
@@ -293,7 +292,6 @@ export default function AdminDashboard() {
       {/* DASHBOARD SECTIONS */}
       <DashboardPedidos />
       <DashboardCupones />
-      <DashboardFacturas />
     </div>
   );
 }

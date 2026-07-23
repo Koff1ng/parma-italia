@@ -17,7 +17,21 @@ export default function Hero() {
 
   return (
     <section className="vault-hero">
-      <div className="hero-background-gradient"></div>
+      {/* 🎥 VIDEO BACKGROUND - thevault.mp4 */}
+      <video
+        className="hero-video-bg"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        poster="/editorial_hero.webp"
+      >
+        <source src="/thevault.mp4" type="video/mp4" />
+      </video>
+
+      {/* Dark overlay for text readability */}
+      <div className="hero-video-overlay"></div>
 
       <div className="hero-content container">
         <div className="hero-badge">

@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useCart } from "../../context/CartContext";
 import { formatCurrency, buildWhatsAppOrderUrl } from "../../utils/formatters";
 import { orderService } from "../../services/orderService";
-import { InvoiceService } from "../../services/invoiceService";
 import "./CheckoutPage.css";
 
 export default function CheckoutPage() {
@@ -17,14 +16,6 @@ export default function CheckoutPage() {
     notas: "",
   });
 
-  // Factura electrónica state
-  const [requiereFactura, setRequiereFactura] = useState(false);
-  const [facturaForm, setFacturaForm] = useState({
-    tipoDocumento: "CC",
-    numeroDocumento: "",
-    razonSocial: "",
-    direccionFiscal: "",
-  });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -38,9 +29,6 @@ export default function CheckoutPage() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleFacturaChange = (e) => {
-    setFacturaForm({ ...facturaForm, [e.target.name]: e.target.value });
-  };
 
   const handleCreateOrder = async (metodoPago) => {
     if (!isValid) return;
@@ -61,23 +49,6 @@ export default function CheckoutPage() {
       // 1. Save order in Supabase
       const createdOrder = await orderService.createOrder(orderPayload);
 
-      // 2. Save invoice if requested
-      if (requiereFactura) {
-        const xmlData = InvoiceService.generarXMLFactura(
-          { subtotal, descuento: discountAmount, items: cart },
-          facturaForm
-        );
-
-        await InvoiceService.saveInvoice({
-          numero_factura: xmlData.numeroFactura,
-          order_id: createdOrder.id,
-          cliente_nombre: facturaForm.razonSocial || form.nombre,
-          cliente_documento: facturaForm.numeroDocumento,
-          cliente_email: form.email,
-          total,
-          estado: "Emitida",
-        });
-      }
 
       // 3. Process payment method
       if (metodoPago === "WhatsApp") {
@@ -193,60 +164,6 @@ export default function CheckoutPage() {
             </div>
           </div>
 
-          {/* ELECTRONIC INVOICE TOGGLE */}
-          <div className="checkout-card">
-            <div className="invoice-toggle-row">
-              <label className="checkbox-label">
-                <input
-                  type="checkbox"
-                  checked={requiereFactura}
-                  onChange={(e) => setRequiereFactura(e.target.checked)}
-                />
-                <span>¿Requieres Factura Electrónica (DIAN)?</span>
-              </label>
-            </div>
-
-            {requiereFactura && (
-              <div className="invoice-fields-box">
-                <div className="form-group-row">
-                  <div className="form-field">
-                    <label>Tipo Documento</label>
-                    <select
-                      name="tipoDocumento"
-                      value={facturaForm.tipoDocumento}
-                      onChange={handleFacturaChange}
-                    >
-                      <option value="CC">Cédula de Ciudadanía (CC)</option>
-                      <option value="NIT">NIT Empresa</option>
-                      <option value="CE">Cédula Extranjería</option>
-                    </select>
-                  </div>
-
-                  <div className="form-field">
-                    <label>Número Documento / NIT</label>
-                    <input
-                      type="text"
-                      name="numeroDocumento"
-                      placeholder="123456789"
-                      value={facturaForm.numeroDocumento}
-                      onChange={handleFacturaChange}
-                    />
-                  </div>
-                </div>
-
-                <div className="form-field full-width">
-                  <label>Razón Social / Nombre Fiscal</label>
-                  <input
-                    type="text"
-                    name="razonSocial"
-                    placeholder="Nombre registrado en el RUT"
-                    value={facturaForm.razonSocial}
-                    onChange={handleFacturaChange}
-                  />
-                </div>
-              </div>
-            )}
-          </div>
         </div>
 
         {/* RIGHT COLUMN: SUMMARY & PAYMENT SELECTION */}

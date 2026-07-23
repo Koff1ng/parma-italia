@@ -9,18 +9,36 @@ export default function ScrollAnimationObserver() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
+            entry.target.classList.add("animate-in");
           }
         });
       },
       { threshold: 0.1 }
     );
 
-    const elements = document.querySelectorAll(".scroll-animate, .scroll-animate-fade");
-    elements.forEach((el) => observer.observe(el));
+    // Observe existing elements
+    const observeAll = () => {
+      const elements = document.querySelectorAll(
+        ".scroll-animate:not(.animate-in), .scroll-animate-fade:not(.animate-in)"
+      );
+      elements.forEach((el) => observer.observe(el));
+    };
+
+    observeAll();
+
+    // MutationObserver to catch dynamically added elements (e.g. async-loaded products)
+    const mutationObserver = new MutationObserver(() => {
+      observeAll();
+    });
+
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
 
     return () => {
-      elements.forEach((el) => observer.unobserve(el));
+      observer.disconnect();
+      mutationObserver.disconnect();
     };
   }, [location.pathname]);
 
