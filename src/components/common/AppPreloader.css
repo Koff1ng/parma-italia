@@ -1,0 +1,79 @@
+.app-preloader-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: #050507;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s ease;
+}
+
+.app-preloader-backdrop.fade-out {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.preloader-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 360px;
+  padding: 24px;
+}
+
+.preloader-logo-img {
+  max-width: 280px;
+  width: 85%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 24px;
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.9));
+}
+
+.preloader-red-bar {
+  width: 140px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.preloader-progress-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 40%;
+  background: var(--accent-red, #D90429);
+  box-shadow: 0 0 10px var(--accent-red, #D90429);
+  animation: preloaderSlide 1.2s infinite ease-in-out;
+}
+
+@keyframes preloaderSlide {
+  0% {
+    left: -40%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: -40%;
+  }
+}
+
+.preloader-tagline {
+  font-family: var(--font-heading, 'Space Grotesk', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--text-secondary, #A0A0AC);
+  text-transform: uppercase;
+}

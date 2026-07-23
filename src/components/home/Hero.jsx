@@ -17,7 +17,7 @@ export default function Hero() {
 
   return (
     <section className="vault-hero">
-      {/* 🎥 VIDEO BACKGROUND */}
+      {/* 🎥 VIDEO BACKGROUND (No boat poster) */}
       <video
         className="hero-video-bg"
         autoPlay
@@ -25,7 +25,6 @@ export default function Hero() {
         muted
         playsInline
         preload="auto"
-        poster="/editorial_hero.webp"
       >
         <source src="/thevault.mp4" type="video/mp4" />
       </video>

@@ -8,6 +8,7 @@ import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import SideCart from "./components/cart/SideCart";
 import Loader from "./components/common/Loader";
+import AppPreloader from "./components/common/AppPreloader";
 import ScrollAnimationObserver from "./components/common/ScrollAnimationObserver";
 import MercadoPagoHandler from "./components/common/MercadoPagoHandler";
 
@@ -64,6 +65,9 @@ export default function App() {
   return (
     <ProductsProvider>
       <CartProvider>
+        {/* Luxury Backdrop-Blurred Preloader Screen */}
+        <AppPreloader />
+
         <ScrollAnimationObserver />
         <MercadoPagoHandler />
 

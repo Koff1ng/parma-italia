@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background-color: #050507;
   border-bottom: 1px solid rgba(217, 4, 41, 0.2);
 }
 
@@ -16,6 +17,7 @@
   object-fit: cover;
   display: block;
   z-index: 0;
+  background-color: #050507;
 }
 
 .hero-video-overlay {
