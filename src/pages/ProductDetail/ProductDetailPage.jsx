@@ -160,7 +160,7 @@ export default function ProductDetailPage({ setOpenCart }) {
           onClick={handleAdd}
           disabled={!puedeAgregar}
         >
-          {puedeAgregar ? "AÑADIR A LA BOLSA 🛍️" : "AGOTADO EN ESTA TALLA"}
+          {puedeAgregar ? "AÑADIR A LA BOLSA" : "AGOTADO EN ESTA TALLA"}
         </button>
 
         {/* ACCORDION SECTIONS */}

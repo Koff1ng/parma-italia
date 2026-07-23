@@ -212,7 +212,7 @@ export default function CheckoutPage() {
                 disabled={!isValid || isSubmitting}
                 onClick={() => handleCreateOrder("WhatsApp")}
               >
-                COMPRAR POR WHATSAPP (NEQUI / BANCOLOMBIA) 📱
+                COMPRAR POR WHATSAPP (NEQUI / BANCOLOMBIA)
               </button>
 
               <button
@@ -220,7 +220,7 @@ export default function CheckoutPage() {
                 disabled={!isValid || isSubmitting}
                 onClick={() => handleCreateOrder("MercadoPago")}
               >
-                PAGAR CON MERCADOPAGO 💳
+                PAGAR CON MERCADOPAGO
               </button>
 
               {!isValid && (

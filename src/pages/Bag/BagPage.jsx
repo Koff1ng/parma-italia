@@ -57,7 +57,6 @@ export default function BagPage() {
     return (
       <div className="bag-page-container container empty-bag-view">
         <div className="empty-box">
-          <span className="red-icon">🛍️</span>
           <h2>TU BOLSA DE COMPRAS ESTÁ VACÍA</h2>
           <p>Explora nuestras colecciones exclusivas e inicia tu orden.</p>
           <Link to="/" className="btn-red">
@@ -158,7 +157,7 @@ export default function BagPage() {
               PROCEDER AL CHECKOUT →
             </button>
             <button className="btn-red-outline full-btn" onClick={handleQuickWhatsAppOrder}>
-              COMPRAR POR WHATSAPP 📲
+              COMPRAR POR WHATSAPP
             </button>
           </div>
         </div>

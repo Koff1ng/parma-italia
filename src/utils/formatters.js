@@ -1,61 +1,57 @@
-/**
- * Formats a number to Colombian Pesos (COP) currency string
- */
-export const formatCurrency = (amount) => {
-  const num = Number(amount) || 0;
-  return `$${num.toLocaleString("es-CO")}`;
-};
+export function formatCurrency(amount) {
+  if (amount === undefined || amount === null) return "$0";
+  return new Intl.NumberFormat("es-CO", {
+    style: "currency",
+    currency: "COP",
+    maximumFractionDigits: 0,
+  }).format(amount);
+}
 
-/**
- * Formats a date string or timestamp to readable Spanish format
- */
-export const formatDate = (dateInput) => {
-  if (!dateInput) return "N/A";
-  const date = new Date(dateInput);
-  return date.toLocaleDateString("es-CO", {
-    day: "2-digit",
-    month: "short",
+export function formatDate(dateString) {
+  if (!dateString) return "";
+  const date = new Date(dateString);
+  return new Intl.DateTimeFormat("es-CO", {
     year: "numeric",
+    month: "short",
+    day: "numeric",
     hour: "2-digit",
     minute: "2-digit",
-  });
-};
+  }).format(date);
+}
 
-/**
- * Generates formatted WhatsApp link and message for The Vault Prestige order confirmation
- */
-export const buildWhatsAppOrderUrl = ({
-  cliente,
-  items,
-  total,
-  orderId,
-  metodoPago = "MercadoPago / Transferencia",
-  phoneNumber = "573113524794",
-}) => {
-  let mensaje = `⚜️ *NUEVO PEDIDO EXCLUSIVO - THE VAULT PRESTIGE* ⚜️\n`;
-  if (orderId) mensaje += `*Código de Orden:* #${orderId}\n`;
-  mensaje += `-----------------------------------\n`;
-  mensaje += `👤 *Cliente:* ${cliente.nombre}\n`;
-  mensaje += `📞 *Teléfono:* ${cliente.telefono}\n`;
-  mensaje += `📍 *Ciudad/Dirección:* ${cliente.ciudad} - ${cliente.direccion}\n`;
-  if (cliente.email) mensaje += `✉️ *Email:* ${cliente.email}\n`;
-  mensaje += `💳 *Método de Pago:* ${metodoPago}\n`;
-  mensaje += `-----------------------------------\n`;
-  mensaje += `🛍️ *PRENDAS SELECCIONADAS (QUALITÉ 1.1):*\n\n`;
+export function buildWhatsAppOrderUrl({ cliente, items, total, orderId = null, metodoPago = "WhatsApp / Transferencia" }) {
+  const adminPhone = "573113524794";
 
+  let mensaje = `*SOLICITUD DE PEDIDO - THE VOULT PRESTIGE*\n`;
+  if (orderId) {
+    mensaje += `*Orden #:* ${orderId}\n`;
+  }
+  mensaje += `----------------------------------------\n\n`;
+
+  mensaje += `*DATOS DEL CLIENTE:*\n`;
+  mensaje += `• *Nombre:* ${cliente.nombre || "No especificado"}\n`;
+  mensaje += `• *Teléfono:* ${cliente.telefono || "No especificado"}\n`;
+  mensaje += `• *Ciudad:* ${cliente.ciudad || "No especificada"}\n`;
+  mensaje += `• *Dirección:* ${cliente.direccion || "No especificada"}\n`;
+  if (cliente.email) {
+    mensaje += `• *Email:* ${cliente.email}\n`;
+  }
+  mensaje += `\n`;
+
+  mensaje += `*MÉTODO DE PAGO SELECCIONADO:*\n${metodoPago}\n\n`;
+
+  mensaje += `*PRENDAS SELECCIONADAS:*\n\n`;
   items.forEach((item, index) => {
-    const precioUnit = Number(item.itemprice || item.precio || 0);
-    const subtotal = precioUnit * (item.qty || 1);
+    const itemPrice = Number(item.itemprice || item.precio || 0);
     mensaje += `${index + 1}. *${item.nombre}*\n`;
-    if (item.size) mensaje += `   • Talla: ${item.size}\n`;
-    mensaje += `   • Cantidad: ${item.qty || 1}\n`;
-    mensaje += `   • Subtotal: ${formatCurrency(subtotal)}\n\n`;
+    if (item.size) mensaje += `   - Talla: ${item.size}\n`;
+    mensaje += `   - Cantidad: ${item.qty}\n`;
+    mensaje += `   - Precio Total: ${formatCurrency(itemPrice * item.qty)}\n\n`;
   });
 
-  mensaje += `-----------------------------------\n`;
-  mensaje += `💰 *TOTAL A PAGAR:* ${formatCurrency(total)}\n`;
-  mensaje += `-----------------------------------\n`;
-  mensaje += `✨ *Gracias por comprar en The Vault Prestige.* Por favor indícanos si requieres asistencia con tu pago.`;
+  mensaje += `----------------------------------------\n`;
+  mensaje += `*TOTAL A PAGAR:* ${formatCurrency(total)}\n\n`;
+  mensaje += `Quedo atento a los datos para realizar la transferencia / pago. ¡Muchas gracias!`;
 
-  return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mensaje)}`;
-};
+  return `https://wa.me/${adminPhone}?text=${encodeURIComponent(mensaje)}`;
+}

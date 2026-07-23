@@ -10,7 +10,7 @@ export default function AboutPage() {
           <img src="/logo.png" alt="THE VOULT PRESTIGE" className="about-logo-img" />
         </div>
         <p className="about-tagline">
-          LAEXCLUSIVIDAD DEL STREETWEAR DE LUJO • ALGODÓN PIMA PERUANO DE ALTO GRAMAJE
+          LA EXCLUSIVIDAD DEL STREETWEAR DE LUJO • ALGODÓN PIMA PERUANO DE ALTO GRAMAJE
         </p>
       </div>
 
@@ -59,7 +59,7 @@ export default function AboutPage() {
       <div className="about-cta-section">
         <h2>¿LISTO PARA INGRESAR AL VAULT?</h2>
         <Link to="/" className="btn-red">
-          EXPLORAR COLECCIÓN 🛍️
+          EXPLORAR COLECCIÓN
         </Link>
       </div>
     </div>

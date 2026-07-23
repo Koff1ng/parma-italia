@@ -152,7 +152,7 @@ export default function AdminDashboard() {
         </div>
 
         <button className="btn-red-outline sm" onClick={handleLogout}>
-          CERRAR SESIÓN 🔒
+          CERRAR SESIÓN
         </button>
       </div>
 
@@ -214,7 +214,7 @@ export default function AdminDashboard() {
               <label>Material & Gramaje</label>
               <input
                 type="text"
-                placeholder="Ej: 100% Algodón Pesado 500 GSM"
+                placeholder="Ej: 100% Algodón Pima Peruano 500 GSM"
                 value={detalles.material}
                 onChange={(e) => setDetalles({ ...detalles, material: e.target.value })}
               />
@@ -240,7 +240,7 @@ export default function AdminDashboard() {
             {/* UPLOAD IMAGES */}
             <div className="form-group">
               <label className="file-upload-label">
-                📷 Seleccionar Imágenes de Producto
+                Seleccionar Imágenes de Producto
                 <input type="file" multiple accept="image/*" onChange={handleFileSelect} />
               </label>
             </div>
@@ -290,10 +290,10 @@ export default function AdminDashboard() {
 
                   <div className="admin-item-actions">
                     <button className="btn-edit-sm" onClick={() => handleEdit(p)}>
-                      ✏️ Editar
+                      Editar
                     </button>
                     <button className="btn-danger-sm" onClick={() => handleDelete(p.id)}>
-                      🗑️
+                      Eliminar
                     </button>
                   </div>
                 </div>

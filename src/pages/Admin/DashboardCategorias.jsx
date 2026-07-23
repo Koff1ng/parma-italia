@@ -66,7 +66,7 @@ export default function DashboardCategorias() {
   return (
     <div className="admin-section-block">
       <div className="section-header-row">
-        <h3>🏷️ GESTIÓN DE CATEGORÍAS ({categories.length})</h3>
+        <h3>GESTIÓN DE CATEGORÍAS ({categories.length})</h3>
         <p className="admin-subtext">Crea, modifica o elimina categorías del catálogo en tiempo real.</p>
       </div>
 
@@ -80,7 +80,7 @@ export default function DashboardCategorias() {
               <label>Nombre de la Categoría *</label>
               <input
                 type="text"
-                placeholder="Ej: Accessories / Accesorios"
+                placeholder="Ej: Accesorios"
                 value={nombre}
                 onChange={(e) => setNombre(e.target.value)}
                 required
@@ -91,7 +91,7 @@ export default function DashboardCategorias() {
               <label>Slug / Código URL (Opcional)</label>
               <input
                 type="text"
-                placeholder="Ej: accessories"
+                placeholder="Ej: accesorios"
                 value={slug}
                 onChange={(e) => setSlug(e.target.value)}
               />
@@ -140,14 +140,14 @@ export default function DashboardCategorias() {
                           onClick={() => handleEdit(c)}
                           title="Editar Categoría"
                         >
-                          ✏️ Editar
+                          Editar
                         </button>
                         <button
                           className="btn-danger-sm"
                           onClick={() => handleDelete(c.id, c.nombre)}
                           title="Eliminar Categoría"
                         >
-                          🗑️
+                          Eliminar
                         </button>
                       </div>
                     </td>

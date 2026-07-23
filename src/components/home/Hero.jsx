@@ -49,7 +49,7 @@ export default function Hero() {
 
         <div className="hero-actions">
           <button className="btn-red" onClick={scrollToCatalog}>
-            EXPLORAR EL VAULT 🛍️
+            EXPLORAR EL VAULT
           </button>
           <Link to="/about" className="btn-red-outline">
             NUESTRO MANIFIESTO

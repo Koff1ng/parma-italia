@@ -32,7 +32,7 @@ export default function Footer() {
           <div className="footer-col">
             <h4 className="footer-col-title">SERVICIO AL CLIENTE</h4>
             <ul className="footer-links">
-              <li><a href="https://wa.me/573113524794" target="_blank" rel="noopener noreferrer">SOPORTE WHATSAPP 📱</a></li>
+              <li><a href="https://wa.me/573113524794" target="_blank" rel="noopener noreferrer">SOPORTE WHATSAPP</a></li>
               <li><span>ENVÍOS NACIONALES</span></li>
               <li><span>COMPRA SEGURA</span></li>
             </ul>

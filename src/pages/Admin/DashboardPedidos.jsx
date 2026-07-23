@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { orderService } from "../../services/orderService";
 import { formatCurrency, formatDate } from "../../utils/formatters";
 
@@ -6,48 +6,63 @@ export default function DashboardPedidos() {
   const [pedidos, setPedidos] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const loadOrders = async () => {
+  const fetchPedidos = async () => {
     setLoading(true);
-    const data = await orderService.getOrders();
-    setPedidos(data);
-    setLoading(false);
+    try {
+      const data = await orderService.getOrders();
+      setPedidos(data);
+    } catch (e) {
+      console.error("Error cargando pedidos:", e);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
-    loadOrders();
+    fetchPedidos();
   }, []);
 
-  const handleUpdateStatus = async (id, status) => {
-    await orderService.updateOrderStatus(id, status);
-    loadOrders();
+  const handleUpdateStatus = async (id, nuevoEstado) => {
+    try {
+      await orderService.updateOrderStatus(id, nuevoEstado);
+      fetchPedidos();
+    } catch (e) {
+      alert("Error al actualizar estado del pedido");
+    }
   };
 
   const handleDeleteOrder = async (id) => {
-    if (!confirm("¿Seguro de eliminar este pedido?")) return;
-    await orderService.deleteOrder(id);
-    loadOrders();
+    if (!confirm("¿Seguro que deseas eliminar este pedido?")) return;
+    try {
+      await orderService.deleteOrder(id);
+      fetchPedidos();
+    } catch (e) {
+      alert("Error al eliminar pedido");
+    }
   };
 
   return (
     <div className="admin-section-block">
       <div className="section-header-row">
-        <h3>🛍️ GESTIÓN DE PEDIDOS VIP ({pedidos.length})</h3>
-        <button className="btn-gold-outline sm" onClick={loadOrders}>Refrescar</button>
+        <h3>GESTIÓN DE PEDIDOS ({pedidos.length})</h3>
+        <button className="btn-red-outline sm" onClick={fetchPedidos}>
+          Actualizar Lista
+        </button>
       </div>
 
       {loading ? (
-        <p className="admin-msg">Cargando pedidos...</p>
+        <p className="loading-text">Cargando pedidos...</p>
       ) : pedidos.length === 0 ? (
-        <p className="admin-msg">No hay pedidos registrados en la base de datos.</p>
+        <p className="no-data-text">No hay pedidos registrados todavía.</p>
       ) : (
         <div className="admin-table-wrapper">
           <table className="admin-table">
             <thead>
               <tr>
-                <th>Código ID</th>
+                <th>ID Pedido</th>
                 <th>Fecha</th>
                 <th>Cliente</th>
-                <th>Contacto</th>
+                <th>Teléfono</th>
                 <th>Ciudad / Dirección</th>
                 <th>Total</th>
                 <th>Estado</th>
@@ -57,7 +72,9 @@ export default function DashboardPedidos() {
             <tbody>
               {pedidos.map((p) => (
                 <tr key={p.id}>
-                  <td><strong>#{p.id}</strong></td>
+                  <td>
+                    <strong>#{p.id}</strong>
+                  </td>
                   <td>{formatDate(p.created_at)}</td>
                   <td>{p.cliente_nombre}</td>
                   <td>{p.cliente_telefono}</td>
@@ -67,7 +84,7 @@ export default function DashboardPedidos() {
                     <select
                       value={p.estado || "Pendiente"}
                       onChange={(e) => handleUpdateStatus(p.id, e.target.value)}
-                      className={`status-badge ${p.estado?.toLowerCase()}`}
+                      className={`status-select ${p.estado ? p.estado.toLowerCase() : "pendiente"}`}
                     >
                       <option value="Pendiente">Pendiente</option>
                       <option value="Enviado">Enviado</option>
@@ -79,8 +96,9 @@ export default function DashboardPedidos() {
                     <button
                       className="btn-danger-sm"
                       onClick={() => handleDeleteOrder(p.id)}
+                      title="Eliminar Pedido"
                     >
-                      🗑️
+                      Eliminar
                     </button>
                   </td>
                 </tr>
