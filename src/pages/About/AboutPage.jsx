@@ -30,16 +30,34 @@ export default function AboutPage() {
 
         <div className="about-image-card">
           <img
-            src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80"
+            src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=90"
             alt="The Voult Prestige - Algodón Pima Peruano"
           />
+        </div>
+      </div>
+
+      {/* BRANDS SECTION */}
+      <div className="about-brands-block">
+        <span className="badge-red">MARCAS REPRESENTADAS</span>
+        <h3>TRABAJAMOS CON LAS MEJORES MARCAS DEL MERCADO</h3>
+        <p>
+          En The Voult Prestige encontrarás piezas inspiradas y confeccionadas al nivel de las casas más reconocidas del streetwear y la alta costura contemporánea:
+        </p>
+        <div className="brands-name-grid">
+          {[
+            "Undergold", "Clemont", "Monastery", "Godspeed", "Casa Blanca",
+            "Vineyard Vines", "Y-OUT", "Off-White", "Chrome Hearts",
+            "Saint Theory", "Amiri"
+          ].map((b) => (
+            <span key={b} className="brand-name-tag">{b}</span>
+          ))}
         </div>
       </div>
 
       <div className="pillars-grid">
         <div className="pillar-card">
           <span className="pillar-num">01</span>
-          <h3>Algodón Pima Peruano SUPREMO</h3>
+          <h3>Algodón Pima Peruano Supremo</h3>
           <p>Fibras extra largas de origen peruano con tejido pesado (400 - 500 GSM). Tacto ultra sedoso, estructura impecable y cero desgaste.</p>
         </div>
 

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import { useProducts } from "../../context/ProductsContext";
 import Hero from "../../components/home/Hero";
+import BrandsCarousel from "../../components/home/BrandsCarousel";
 import ProductCard from "../../components/product/ProductCard";
 import SizeModal from "../../components/product/SizeModal";
 import "./HomePage.css";
@@ -17,21 +18,16 @@ export default function HomePage({ setOpenCart }) {
   const [page, setPage] = useState(1);
   const productsPerPage = 8;
 
-  // Build dynamic category list: Always include "Todos" first
   const dynamicCategoriesList = useMemo(() => {
     const list = [{ label: "Todos", value: "Todos" }];
     if (Array.isArray(categories)) {
       categories.forEach((cat) => {
-        list.push({
-          label: cat.nombre,
-          value: cat.nombre,
-        });
+        list.push({ label: cat.nombre, value: cat.nombre });
       });
     }
     return list;
   }, [categories]);
 
-  // Filter products by category tab
   const filteredProducts = useMemo(() => {
     if (selectedCategory === "Todos") return products;
     return products.filter((p) => {
@@ -62,12 +58,7 @@ export default function HomePage({ setOpenCart }) {
     const portada = imagenes[0] || product.url_imagen;
 
     addToCart(
-      {
-        ...product,
-        size,
-        itemprice: product.precio,
-        thumb: portada
-      },
+      { ...product, size, itemprice: product.precio, thumb: portada },
       () => setOpenCart(true)
     );
 
@@ -78,6 +69,9 @@ export default function HomePage({ setOpenCart }) {
     <div className="home-page-wrapper">
       <Hero />
 
+      {/* BRANDS INFINITE MARQUEE CAROUSEL */}
+      <BrandsCarousel />
+
       <section id="catalog-section" className="catalog-container container">
         <div className="catalog-header">
           <span className="badge-red">COLECCIÓN EXCLUSIVA</span>
@@ -85,16 +79,13 @@ export default function HomePage({ setOpenCart }) {
           <div className="red-divider"></div>
         </div>
 
-        {/* DYNAMIC CATEGORY FILTER TABS */}
+        {/* CATEGORY FILTER TABS */}
         <div className="category-tabs">
           {dynamicCategoriesList.map((cat) => (
             <button
               key={cat.value}
               className={`cat-tab-btn ${selectedCategory === cat.value ? "active" : ""}`}
-              onClick={() => {
-                setSelectedCategory(cat.value);
-                setPage(1);
-              }}
+              onClick={() => { setSelectedCategory(cat.value); setPage(1); }}
             >
               {cat.label}
             </button>
@@ -139,7 +130,6 @@ export default function HomePage({ setOpenCart }) {
               ))}
             </div>
 
-            {/* PAGINATION */}
             {totalPages > 1 && (
               <div className="vault-pagination">
                 <button
@@ -149,9 +139,7 @@ export default function HomePage({ setOpenCart }) {
                 >
                   ← ANTERIOR
                 </button>
-                <span className="page-info">
-                  PÁGINA {page} DE {totalPages}
-                </span>
+                <span className="page-info">PÁGINA {page} DE {totalPages}</span>
                 <button
                   disabled={page === totalPages}
                   onClick={() => setPage((p) => p + 1)}
@@ -165,7 +153,6 @@ export default function HomePage({ setOpenCart }) {
         )}
       </section>
 
-      {/* SIZE SELECTOR MODAL */}
       <SizeModal
         product={selectedProductForSize}
         onClose={() => setSelectedProductForSize(null)}

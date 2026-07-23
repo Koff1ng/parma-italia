@@ -1,0 +1,95 @@
+.brands-section {
+  padding: 44px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  background: var(--bg-surface, #0B0B0E);
+  overflow: hidden;
+}
+
+.brands-eyebrow {
+  font-family: var(--font-heading, 'Space Grotesk', sans-serif);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--text-muted, #62626E);
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.brands-track-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Elegant edge fades */
+.fade-left,
+.fade-right {
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.fade-left {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-surface, #0B0B0E), transparent);
+}
+
+.fade-right {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-surface, #0B0B0E), transparent);
+}
+
+.brands-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: brandScroll 35s linear infinite;
+  will-change: transform;
+}
+
+.brands-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes brandScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Move exactly half the list (since it's doubled) */
+    transform: translateX(-50%);
+  }
+}
+
+.brand-item {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  padding: 0 36px;
+  font-family: var(--font-display, 'Cinzel', serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.brand-item:hover {
+  color: #FFFFFF;
+}
+
+.brand-dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent-red, #D90429);
+  margin-left: 36px;
+  flex-shrink: 0;
+}
