@@ -40,7 +40,7 @@ export default function Hero() {
 
         {/* LOGO IMAGE DISPLAY IN HERO */}
         <div className="hero-logo-box">
-          <img src="/logo.jpg" alt="THE VOULT PRESTIGE" className="hero-logo-img" />
+          <img src="/logo.png" alt="THE VOULT PRESTIGE" className="hero-logo-img" />
         </div>
 
         <p className="hero-subtitle">

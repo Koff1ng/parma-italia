@@ -28,7 +28,7 @@ export default function MobileMenu() {
 
       <nav className={`mobile-menu-drawer ${isOpen ? "open" : ""}`}>
         <div className="drawer-header">
-          <img src="/logo.jpg" alt="THE VOULT PRESTIGE" className="drawer-logo-img" />
+          <img src="/logo.png" alt="THE VOULT PRESTIGE" className="drawer-logo-img" />
           <button className="drawer-close-btn" onClick={() => setIsOpen(false)}>✕</button>
         </div>
 

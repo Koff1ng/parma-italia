@@ -6,17 +6,18 @@ import { formatCurrency } from "../../utils/formatters";
 
 import DashboardPedidos from "./DashboardPedidos";
 import DashboardCupones from "./DashboardCupones";
+import DashboardCategorias from "./DashboardCategorias";
 
 import "./Admin.css";
 
 export default function AdminDashboard() {
   const navigate = useNavigate();
-  const { products, refetchProducts } = useProducts();
+  const { products, categories, refetchProducts } = useProducts();
 
   const [editId, setEditId] = useState(null);
   const [nombre, setNombre] = useState("");
   const [precio, setPrecio] = useState("");
-  const [categoria, setCategoria] = useState("T-Shirts / Camisetas");
+  const [categoria, setCategoria] = useState("");
   const [imagenes, setImagenes] = useState([]);
   const [previewImgs, setPreviewImgs] = useState([]);
   const [uploading, setUploading] = useState(false);
@@ -35,6 +36,13 @@ export default function AdminDashboard() {
     XL: true,
     "2XL": true,
   });
+
+  // Set default category when categories load
+  useEffect(() => {
+    if (categories.length > 0 && !categoria) {
+      setCategoria(categories[0].nombre);
+    }
+  }, [categories, categoria]);
 
   useEffect(() => {
     const isAuth = localStorage.getItem("tvp_admin_auth");
@@ -79,7 +87,7 @@ export default function AdminDashboard() {
       const productPayload = {
         nombre,
         precio: Number(precio),
-        categoria,
+        categoria: categoria || (categories[0] ? categories[0].nombre : "General"),
         url_imagen: finalImages[0] || "",
         imagenes: finalImages,
         tallas,
@@ -103,7 +111,7 @@ export default function AdminDashboard() {
     setEditId(null);
     setNombre("");
     setPrecio("");
-    setCategoria("T-Shirts / Camisetas");
+    setCategoria(categories[0] ? categories[0].nombre : "");
     setImagenes([]);
     setPreviewImgs([]);
     setDetalles({ descripcion: "", material: "", cuidados: "" });
@@ -114,7 +122,7 @@ export default function AdminDashboard() {
     setEditId(p.id);
     setNombre(p.nombre);
     setPrecio(p.precio);
-    setCategoria(p.categoria || "T-Shirts / Camisetas");
+    setCategoria(p.categoria || (categories[0] ? categories[0].nombre : ""));
 
     const imgs = p.imagenes
       ? (Array.isArray(p.imagenes) ? p.imagenes : Object.values(p.imagenes))
@@ -140,7 +148,7 @@ export default function AdminDashboard() {
       {/* HEADER */}
       <div className="admin-nav-header">
         <div className="admin-title-box">
-          <img src="/logo.jpg" alt="THE VOULT PRESTIGE" className="admin-header-logo" />
+          <img src="/logo.png" alt="THE VOULT PRESTIGE" className="admin-header-logo" />
         </div>
 
         <button className="btn-red-outline sm" onClick={handleLogout}>
@@ -148,7 +156,10 @@ export default function AdminDashboard() {
         </button>
       </div>
 
-      {/* GRID LAYOUT: FORM & PRODUCTS */}
+      {/* DYNAMIC CATEGORIES MANAGEMENT BLOCK */}
+      <DashboardCategorias />
+
+      {/* GRID LAYOUT: PRODUCT FORM & PRODUCTS LIST */}
       <div className="dashboard-main-grid">
         {/* PRODUCT FORM */}
         <div className="admin-card-box">
@@ -181,10 +192,11 @@ export default function AdminDashboard() {
               <div className="form-group">
                 <label>Categoría / Category</label>
                 <select value={categoria} onChange={(e) => setCategoria(e.target.value)}>
-                  <option value="T-Shirts / Camisetas">T-Shirts / Camisetas</option>
-                  <option value="Hoodies & Sweatshirts">Hoodies & Sweatshirts</option>
-                  <option value="Jackets & Outerwear / Chaquetas">Jackets & Outerwear / Chaquetas</option>
-                  <option value="Sets & Tracksuits / Conjuntos">Sets & Tracksuits / Conjuntos</option>
+                  {categories.map((c) => (
+                    <option key={c.id} value={c.nombre}>
+                      {c.nombre}
+                    </option>
+                  ))}
                 </select>
               </div>
             </div>
@@ -271,6 +283,9 @@ export default function AdminDashboard() {
                     <span className="item-id-code">#{p.id}</span>
                     <h4 className="item-name">{p.nombre}</h4>
                     <span className="item-price">{formatCurrency(p.precio)}</span>
+                    <span className="item-category-tag" style={{ display: "block", fontSize: "0.7rem", color: "var(--accent-red)" }}>
+                      {p.categoria}
+                    </span>
                   </div>
 
                   <div className="admin-item-actions">

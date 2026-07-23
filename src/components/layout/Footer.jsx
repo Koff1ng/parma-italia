@@ -9,7 +9,7 @@ export default function Footer() {
           {/* BRAND COLUMN */}
           <div className="footer-col brand-col">
             <Link to="/" className="footer-logo-link">
-              <img src="/logo.jpg" alt="THE VOULT PRESTIGE" className="footer-logo-img" />
+              <img src="/logo.png" alt="THE VOULT PRESTIGE" className="footer-logo-img" />
             </Link>
             <p className="footer-brand-desc">
               Curated high-fashion archive collections & luxury streetwear. 

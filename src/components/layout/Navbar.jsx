@@ -24,9 +24,9 @@ export default function Navbar({ isScrolled, navVisible, setOpenCart }) {
           </nav>
         </div>
 
-        {/* LOGO WITH EMBLEM & TYPOGRAPHY MATCHING BRAND IMAGE */}
+        {/* LOGO PNG */}
         <Link to="/" className="vault-logo-brand" aria-label="THE VOULT PRESTIGE">
-          <img src="/logo.jpg" alt="THE VOULT PRESTIGE" className="nav-logo-img" />
+          <img src="/logo.png" alt="THE VOULT PRESTIGE" className="nav-logo-img" />
         </Link>
 
         <div className="nav-right">

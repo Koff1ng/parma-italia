@@ -56,7 +56,7 @@ export default function AdminLogin() {
     <div className="admin-login-wrapper">
       <div className="admin-login-card">
         <div className="login-logo">
-          <img src="/logo.jpg" alt="THE VOULT PRESTIGE" className="admin-logo-img" />
+          <img src="/logo.png" alt="THE VOULT PRESTIGE" className="admin-logo-img" />
         </div>
 
         <h2>ADMIN PORTAL / PANEL DE CONTROL</h2>

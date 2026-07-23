@@ -9,7 +9,7 @@ import "./HomePage.css";
 
 export default function HomePage({ setOpenCart }) {
   const { addToCart } = useCart();
-  const { products, loading } = useProducts();
+  const { products, categories, loading } = useProducts();
   const navigate = useNavigate();
 
   const [selectedCategory, setSelectedCategory] = useState("Todos / All");
@@ -17,21 +17,27 @@ export default function HomePage({ setOpenCart }) {
   const [page, setPage] = useState(1);
   const productsPerPage = 8;
 
-  const categoriesList = [
-    { label: "Todos / All", value: "Todos / All" },
-    { label: "T-Shirts / Camisetas", value: "T-Shirts / Camisetas" },
-    { label: "Hoodies & Sweatshirts", value: "Hoodies & Sweatshirts" },
-    { label: "Jackets & Outerwear", value: "Jackets & Outerwear / Chaquetas" },
-    { label: "Sets & Tracksuits", value: "Sets & Tracksuits / Conjuntos" },
-  ];
+  // Build dynamic category list: Always include "Todos / All" first
+  const dynamicCategoriesList = useMemo(() => {
+    const list = [{ label: "Todos / All", value: "Todos / All" }];
+    if (Array.isArray(categories)) {
+      categories.forEach((cat) => {
+        list.push({
+          label: cat.nombre,
+          value: cat.nombre,
+        });
+      });
+    }
+    return list;
+  }, [categories]);
 
   // Filter products by category tab
   const filteredProducts = useMemo(() => {
     if (selectedCategory === "Todos / All") return products;
     return products.filter((p) => {
-      const cat = p.categoria?.toLowerCase() || "";
+      const cat = (p.categoria || "").toLowerCase();
       const selected = selectedCategory.toLowerCase();
-      return cat.includes(selected.split(" / ")[0].toLowerCase()) || cat === selected;
+      return cat === selected || cat.includes(selected) || selected.includes(cat);
     });
   }, [products, selectedCategory]);
 
@@ -79,9 +85,9 @@ export default function HomePage({ setOpenCart }) {
           <div className="red-divider"></div>
         </div>
 
-        {/* CATEGORY FILTER TABS */}
+        {/* DYNAMIC CATEGORY FILTER TABS */}
         <div className="category-tabs">
-          {categoriesList.map((cat) => (
+          {dynamicCategoriesList.map((cat) => (
             <button
               key={cat.value}
               className={`cat-tab-btn ${selectedCategory === cat.value ? "active" : ""}`}

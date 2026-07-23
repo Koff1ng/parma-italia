@@ -7,7 +7,7 @@ export default function AboutPage() {
       <div className="about-hero-section">
         <span className="badge-red">CONCEPT & MANIFESTO</span>
         <div className="about-logo-box">
-          <img src="/logo.jpg" alt="THE VOULT PRESTIGE" className="about-logo-img" />
+          <img src="/logo.png" alt="THE VOULT PRESTIGE" className="about-logo-img" />
         </div>
         <p className="about-tagline">
           EXCLUSIVE ACCESS TO CONTEMPORARY LUXURY & HIGH-END STREETWEAR.
