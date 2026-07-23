@@ -5,45 +5,46 @@
 
 .catalog-header {
   text-align: center;
-  margin-bottom: 36px;
+  margin-bottom: 40px;
 }
 
 .catalog-title {
-  font-family: var(--font-heading);
-  font-size: 2rem;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
   font-weight: 800;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   color: #FFFFFF;
-  margin-top: 12px;
+  margin-top: 14px;
   text-transform: uppercase;
 }
 
 .red-divider {
-  width: 50px;
+  width: 60px;
   height: 2px;
   background: var(--accent-red);
-  margin: 16px auto 0;
+  margin: 18px auto 0;
   border-radius: 1px;
 }
 
 .category-tabs {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  margin-bottom: 44px;
 }
 
 .cat-tab-btn {
   background: var(--bg-surface, #0B0B0E);
   border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
-  padding: 8px 18px;
+  padding: 10px 22px;
   border-radius: 2px;
   font-family: var(--font-heading);
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
   cursor: pointer;
   transition: var(--transition-fast);
 }
@@ -57,8 +58,8 @@
 .products-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-bottom: 48px;
+  gap: 26px;
+  margin-bottom: 52px;
 }
 
 .card-skeleton {
@@ -116,12 +117,12 @@
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   color: #FFFFFF;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border-radius: 2px;
   font-family: var(--font-heading);
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   cursor: pointer;
   transition: var(--transition-fast);
 }
@@ -139,9 +140,9 @@
 
 .page-info {
   font-family: var(--font-heading);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
   color: var(--text-secondary);
 }
 
@@ -154,10 +155,10 @@
 @media (max-width: 768px) {
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
+    gap: 16px;
   }
   .catalog-title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 }
 

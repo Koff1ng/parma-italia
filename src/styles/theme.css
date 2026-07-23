@@ -1,6 +1,7 @@
 /* ====================================================================
-   THE VOULT PRESTIGE - AUTHENTIC LUXURY DESIGN SYSTEM TOKENS
-   Deep Obsidian & Crimson Red Palette (#E50914 / #D90429)
+   THE VOULT PRESTIGE - LUXURY HIGH-FASHION DESIGN SYSTEM TOKENS
+   Typography: Cinzel (Display), Space Grotesk / Syne (Headings), Plus Jakarta Sans (Body)
+   Palette: Deep Obsidian (#050507) & Crimson Red (#D90429 / #E50914)
    ==================================================================== */
 
 :root {
@@ -30,9 +31,10 @@
   --border-subtle: rgba(255, 255, 255, 0.08);
   --border-strong: rgba(255, 255, 255, 0.18);
 
-  /* 📐 Typography */
-  --font-heading: 'Outfit', 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* 📐 High-Fashion Luxury Typography */
+  --font-display: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-heading: 'Space Grotesk', 'Syne', sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* ⚡ Minimal Subtle Transitions */
   --transition-fast: 0.15s ease;
@@ -83,8 +85,8 @@ body {
   background: transparent;
   color: #FFFFFF;
   font-family: var(--font-heading);
-  font-weight: 600;
   font-size: 0.85rem;
+  font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   padding: 14px 28px;
@@ -111,7 +113,8 @@ body {
   background: var(--accent-red-subtle);
   border: 1px solid var(--accent-red-border);
   color: var(--accent-red);
-  font-size: 0.7rem;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
