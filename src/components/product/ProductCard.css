@@ -30,9 +30,9 @@
   background: rgba(5, 5, 7, 0.88);
   border: 1px solid var(--accent-red);
   color: var(--accent-red);
-  font-family: var(--font-heading);
+  font-family: 'Montserrat', 'Space Grotesk', sans-serif !important;
   font-size: 0.65rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 2px;
   padding: 4px 9px;
   border-radius: 2px;
@@ -67,7 +67,7 @@
   align-items: center;
   justify-content: center;
   color: var(--accent-red);
-  font-family: var(--font-heading);
+  font-family: 'Montserrat', 'Space Grotesk', sans-serif !important;
   font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 2.5px;
@@ -82,20 +82,20 @@
 }
 
 .product-category {
-  font-family: var(--font-heading);
+  font-family: 'Montserrat', 'Space Grotesk', sans-serif !important;
   font-size: 0.68rem;
-  font-weight: 700;
-  color: var(--text-muted);
+  font-weight: 800;
+  color: var(--accent-red);
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 8px;
 }
 
 .product-title {
-  font-family: var(--font-heading);
+  font-family: 'Montserrat', 'Space Grotesk', 'Outfit', sans-serif !important;
   font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.8px;
+  font-weight: 800;
+  letter-spacing: 1px;
   color: #FFFFFF;
   margin-bottom: 16px;
   line-height: 1.35;
@@ -115,7 +115,7 @@
 }
 
 .product-price {
-  font-family: var(--font-heading);
+  font-family: 'Montserrat', 'Space Grotesk', sans-serif !important;
   font-size: 1.05rem;
   font-weight: 800;
   letter-spacing: 0.5px;
@@ -128,9 +128,9 @@
   border: 1px solid var(--border-strong);
   padding: 7px 14px;
   border-radius: 2px;
-  font-family: var(--font-heading);
+  font-family: 'Montserrat', 'Space Grotesk', sans-serif !important;
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   cursor: pointer;

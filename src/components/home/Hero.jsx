@@ -35,7 +35,7 @@ export default function Hero() {
 
       <div className="hero-content container">
         <div className="hero-badge">
-          <span className="badge-red">EDICIONES LIMITADAS • DROPS EXCLUSIVOS</span>
+          <span className="badge-red">ALGODÓN PIMA PERUANO DE ALTO GRAMAJE • DROPS EXCLUSIVOS</span>
         </div>
 
         {/* LOGO IMAGE DISPLAY IN HERO */}
@@ -44,8 +44,8 @@ export default function Hero() {
         </div>
 
         <p className="hero-subtitle">
-          STREETWEAR DE ALTA GAMA Y ROPA DE ARCHIVO DE LUJO.<br />
-          EDICIONES LIMITADAS DE ALTA COSTURA CON ACABADOS DE AUTOR.
+          CONFECCIÓN SUPREMA EN PURO ALGODÓN PIMA PERUANO (400 - 500 GSM).<br />
+          STREETWEAR DE ALTA GAMA Y EDICIONES LIMITADAS CON ACABADOS DE AUTOR.
         </p>
 
         <div className="hero-actions">

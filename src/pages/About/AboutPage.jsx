@@ -10,25 +10,28 @@ export default function AboutPage() {
           <img src="/logo.png" alt="THE VOULT PRESTIGE" className="about-logo-img" />
         </div>
         <p className="about-tagline">
-          ACCESO EXCLUSIVO A LA MODA DE ALTA GAMA Y STREETWEAR DE AUTOR.
+          LAEXCLUSIVIDAD DEL STREETWEAR DE LUJO • ALGODÓN PIMA PERUANO DE ALTO GRAMAJE
         </p>
       </div>
 
       <div className="about-content-grid">
         <div className="about-text-block">
-          <h2>EL CONCEPTO THE VOULT</h2>
+          <h2>EL MANIFIESTO THE VOULT</h2>
           <p>
-            <strong>THE VOULT PRESTIGE</strong> nace con la visión de conectar a coleccionistas y apasionados de la moda con piezas de archivo exclusivas y streetwear de alta gama. Nos especializamos en la selección y confección de prendas inspiradas en las firmas más destacadas de París, Milán y Londres.
+            <strong>THE VOULT PRESTIGE</strong> nace con una misión clara: redefinir el lujo urbano mediante la obsesión por la calidad textil suprema y el diseño de autor.
           </p>
           <p>
-            Cada pieza disponible en nuestro Vault es seleccionada bajo estrictos estándares: gramos exactos por metro cuadrado de algodón peinado (400-500 GSM), bordados en hilo de seda, herrajes de latón macizo y etiquetas originales.
+            No creemos en la producción masiva. Cada prenda en nuestro Vault es confeccionada utilizando exclusivamente <strong>100% Algodón Pima Peruano de Selección Extra-Larga</strong> de alto gramaje (400 a 500 GSM). Reconocido mundialmente por su suavidad sedosa inigualable, brillo natural y resistencia extraordinaria, el Algodón Pima Peruano le otorga a nuestras siluetas la estructura, cuerpo y caída perfecta que exige la alta costura contemporánea.
+          </p>
+          <p>
+            Desde la densidad del tejido hasta los bordados en hilo de seda y los herrajes personalizados, cada Drop es un testimonio de sofisticación sin concesiones.
           </p>
         </div>
 
         <div className="about-image-card">
           <img
             src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80"
-            alt="The Voult Prestige Concept"
+            alt="The Voult Prestige - Algodón Pima Peruano"
           />
         </div>
       </div>
@@ -36,20 +39,20 @@ export default function AboutPage() {
       <div className="pillars-grid">
         <div className="pillar-card">
           <span className="pillar-num">01</span>
-          <h3>Telas de Autor</h3>
-          <p>Algodón peinado francés e italiano de 400-500 GSM estructurado para máxima durabilidad.</p>
+          <h3>Algodón Pima Peruano SUPREMO</h3>
+          <p>Fibras extra largas de origen peruano con tejido pesado (400 - 500 GSM). Tacto ultra sedoso, estructura impecable y cero desgaste.</p>
         </div>
 
         <div className="pillar-card">
           <span className="pillar-num">02</span>
-          <h3>Detalle de Precisión</h3>
-          <p>Serigrafías en relieve de alta densidad, bordados de seda y herrajes metálicos personalizados.</p>
+          <h3>Confección & Detalle de Autor</h3>
+          <p>Serigrafías en relieve de alta densidad, bordados de seda, costuras reforzadas y herrajes metálicos de alta gama.</p>
         </div>
 
         <div className="pillar-card">
           <span className="pillar-num">03</span>
-          <h3>Drops Limitados</h3>
-          <p>Lotes de producción reducidos para preservar la exclusividad de cada pieza.</p>
+          <h3>Drops de Edición Limitada</h3>
+          <p>Lotes de producción estrictamente reducidos para garantizar que cada prenda mantenga su estatus de pieza de colección.</p>
         </div>
       </div>
 

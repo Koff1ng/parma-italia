@@ -1,6 +1,6 @@
 import { supabase } from "../lib/supabase";
 
-// Catálogo mock exclusivo en español para THE VOULT PRESTIGE
+// Catálogo mock exclusivo en español para THE VOULT PRESTIGE (Algodón Pima Peruano)
 export const MOCK_PRODUCTS = [
   {
     id: "TVP-001",
@@ -14,8 +14,8 @@ export const MOCK_PRODUCTS = [
     tallas: { XS: true, S: true, M: true, L: true, XL: true, "2XL": true },
     stock: { XS: 5, S: 8, M: 12, L: 10, XL: 6, "2XL": 4 },
     detalles: {
-      descripcion: "Confeccionado en algodón peinado de 500 GSM con silueta oversized de alta costura, bordado frontal metálico y acabados artesanales de archivo.",
-      material: "100% Algodón Peinado Francés (500 GSM)",
+      descripcion: "Confeccionado en puro Algodón Pima Peruano de 500 GSM con silueta oversized de alta costura, bordado frontal metálico y acabados artesanales de archivo.",
+      material: "100% Algodón Pima Peruano de Alto Gramaje (500 GSM)",
       cuidados: "Lavar en seco o agua fría al revés."
     },
     categoria: "Hoodies y Sacos",
@@ -33,8 +33,8 @@ export const MOCK_PRODUCTS = [
     tallas: { XS: false, S: true, M: true, L: true, XL: true, "2XL": false },
     stock: { XS: 0, S: 6, M: 10, L: 8, XL: 5, "2XL": 0 },
     detalles: {
-      descripcion: "Camiseta de corte relajado con serigrafía de alta densidad en relieve y detalles característicos de archivo en mangas y espalda.",
-      material: "100% Algodón Orgánico Pesado (280 GSM)",
+      descripcion: "Camiseta de corte relajado en Algodón Pima Peruano con serigrafía de alta densidad en relieve y detalles característicos de archivo en mangas y espalda.",
+      material: "100% Algodón Pima Peruano Heavyweight (280 GSM)",
       cuidados: "Lavado delicado en frío."
     },
     categoria: "Camisetas",
@@ -71,8 +71,8 @@ export const MOCK_PRODUCTS = [
     tallas: { XS: true, S: true, M: true, L: true, XL: true, "2XL": false },
     stock: { XS: 4, S: 7, M: 9, L: 6, XL: 3, "2XL": 0 },
     detalles: {
-      descripcion: "Conjunto exclusivo de 2 piezas con parches en chenille de toalla de alto relieve y cremalleras de precisión.",
-      material: "Algodón Cepillado & Poliéster de Alta Resistencia (420 GSM)",
+      descripcion: "Conjunto exclusivo de 2 piezas en felpa de Algodón Pima Peruano con parches en chenille de toalla de alto relieve y cremalleras de precisión.",
+      material: "Mezcla de Algodón Pima Peruano & Felpa Pesada (420 GSM)",
       cuidados: "Lavar con agua fría, secar colgado."
     },
     categoria: "Conjuntos",
@@ -90,8 +90,8 @@ export const MOCK_PRODUCTS = [
     tallas: { XS: true, S: true, M: true, L: true, XL: true, "2XL": true },
     stock: { XS: 3, S: 6, M: 10, L: 8, XL: 4, "2XL": 2 },
     detalles: {
-      descripcion: "Camiseta de silueta contemporánea fabricada en algodón orgánico mercerizado de caída estructurada.",
-      material: "100% Algodón Orgánico Mercerizado",
+      descripcion: "Camiseta de silueta contemporánea fabricada en puro Algodón Pima Peruano mercerizado de caída estructurada.",
+      material: "100% Algodón Pima Peruano Mercerizado",
       cuidados: "Lavado suave a mano."
     },
     categoria: "Camisetas",
