@@ -1,0 +1,27 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "productosweb": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "pedidos": {
+      ".read": "auth != null",
+      ".write": true
+    },
+    "clientes": {
+      ".read": "auth != null",
+      ".write": true
+    },
+    "facturas": {
+      ".read": "auth != null",
+      ".write": true
+    },
+    "cupones": {
+      ".read": true,
+      ".write": "auth != null"
+    }
+  }
+}
+

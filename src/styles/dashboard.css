@@ -12,8 +12,18 @@
 .dashboard-container {
   padding: 30px;
   min-height: 100vh;
-  background: #f4f5fa;
-  color: #111;
+  width: 100vw;
+  background: #f4f5fa !important;
+  color: #111 !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
 .panel-title {
@@ -314,4 +324,595 @@
 }
 .btn-test-telegram:hover {
   background: #0077b3;
+}
+
+/* =======================
+   PANEL DE PEDIDOS MEJORADO
+======================= */
+.pedidos-container {
+  margin-top: 40px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.pedidos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.pedidos-header .panel-title {
+  margin-bottom: 0;
+  font-size: 28px;
+}
+
+/* 🔥 Barra de búsqueda */
+.search-bar {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+  max-width: 500px;
+  min-width: 300px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #111;
+}
+
+.search-btn {
+  padding: 12px 20px;
+  background: #111;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+
+.search-btn:hover {
+  background: #333;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.pedidos-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1200px;
+}
+
+.pedidos-table th {
+  background: #111;
+  color: white;
+  padding: 14px 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.pedidos-table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: top;
+  font-size: 14px;
+}
+
+.pedidos-table tbody tr:hover {
+  background: #f9f9f9;
+}
+
+.pedidos-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* 🔥 Estilos específicos de columnas */
+.order-id {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: #666;
+  font-weight: 600;
+}
+
+.customer-info {
+  min-width: 180px;
+}
+
+.customer-name {
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.customer-address {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.contact-info {
+  min-width: 150px;
+  font-size: 13px;
+}
+
+.contact-email,
+.contact-phone {
+  margin-bottom: 4px;
+  color: #555;
+  font-size: 12px;
+}
+
+.items-list {
+  min-width: 200px;
+  max-width: 250px;
+}
+
+.item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.item-row:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.item-title {
+  flex: 1;
+  font-size: 13px;
+  color: #333;
+  margin-right: 8px;
+}
+
+.item-quantity {
+  font-size: 12px;
+  color: #666;
+  margin-right: 8px;
+  font-weight: 600;
+}
+
+.item-price {
+  font-size: 12px;
+  color: #111;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.total-amount {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.total-amount strong {
+  color: #24a31c;
+}
+
+/* 🔥 Badge de estado mejorado */
+.estado-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.estado-pendiente {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.estado-pagado {
+  background: #d4edda;
+  color: #155724;
+}
+
+.estado-rechazado {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.estado-enviado {
+  background: #cfe2ff;
+  color: #084298;
+}
+
+.estado-entregado {
+  background: #d1e7dd;
+  color: #0f5132;
+}
+
+.order-date {
+  font-size: 12px;
+  color: #666;
+  white-space: nowrap;
+}
+
+/* 🔥 Acciones */
+.actions-cell {
+  min-width: 180px;
+}
+
+.actions-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.estado-select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 13px;
+  background: white;
+  cursor: pointer;
+  flex: 1;
+  min-width: 120px;
+}
+
+.estado-select:focus {
+  outline: none;
+  border-color: #111;
+}
+
+.btn-delete-order {
+  padding: 8px 12px;
+  background: #fff;
+  border: 1px solid #ff4d4f;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-delete-order:hover {
+  background: #ff4d4f;
+  transform: scale(1.05);
+}
+
+.no-results {
+  text-align: center;
+  padding: 40px !important;
+  color: #999;
+  font-style: italic;
+}
+
+.pedidos-footer {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
+  text-align: right;
+}
+
+.total-count {
+  font-size: 14px;
+  color: #666;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+  .pedidos-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-bar {
+    max-width: 100%;
+  }
+}
+
+/* =============================
+   SECCIÓN DE CUPONES
+============================= */
+
+.cupones-section {
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 2px solid var(--border-color);
+}
+
+.section-header {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cupones-grid {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.cupon-form {
+  background: var(--bg-secondary);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px var(--shadow);
+  border: 1px solid var(--border-color);
+  position: sticky;
+  top: 20px;
+}
+
+.cupon-form h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.cupon-form .form-group {
+  margin-bottom: 20px;
+}
+
+.cupon-form label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.cupon-form .form-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 14px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: border-color 0.2s;
+}
+
+.cupon-form .form-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.porcentaje-input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.porcentaje-input-group .form-input {
+  flex: 1;
+}
+
+.porcentaje-symbol {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.btn-cancel {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-cancel:hover {
+  background: var(--border-color);
+}
+
+.cupones-list {
+  background: var(--bg-secondary);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.cupones-list h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-tertiary);
+  font-style: italic;
+}
+
+.cupones-table {
+  overflow-x: auto;
+}
+
+.cupones-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cupones-table thead {
+  background: var(--bg-tertiary);
+}
+
+.cupones-table th {
+  padding: 15px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.cupones-table td {
+  padding: 15px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.cupones-table tr:hover {
+  background: var(--bg-tertiary);
+}
+
+.cupones-table tr.inactivo {
+  opacity: 0.6;
+}
+
+.descuento-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: #e3f2fd;
+  color: #1976d2;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .descuento-badge {
+  background: #1e3a5f;
+  color: #64b5f6;
+}
+
+.estado-badge.activo {
+  background: #d1e7dd;
+  color: #0f5132;
+}
+
+[data-theme="dark"] .estado-badge.activo {
+  background: #1e4d3a;
+  color: #81c784;
+}
+
+.estado-badge.inactivo {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+[data-theme="dark"] .estado-badge.inactivo {
+  background: #4d1e24;
+  color: #e57373;
+}
+
+.fechas-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fechas-info small {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn-toggle {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.btn-toggle:hover {
+  background: var(--border-color);
+  transform: scale(1.05);
+}
+
+/* Responsive para cupones */
+@media (max-width: 1400px) {
+  .cupones-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cupon-form {
+    position: relative;
+  }
+}
+
+@media (max-width: 768px) {
+  .cupones-table {
+    font-size: 12px;
+  }
+
+  .cupones-table th,
+  .cupones-table td {
+    padding: 8px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 4px;
+  }
 }

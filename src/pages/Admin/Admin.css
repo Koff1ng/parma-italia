@@ -1,0 +1,370 @@
+.admin-login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #181824 0%, #070709 80%);
+  padding: 20px;
+}
+
+.admin-login-card {
+  background: var(--bg-surface, #0f0f14);
+  border: 1px solid var(--border-gold-glow);
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+}
+
+.login-logo {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: #fff;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.admin-login-card h2 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--accent-gold);
+  margin-bottom: 24px;
+}
+
+.admin-error-box {
+  background: rgba(255, 85, 85, 0.15);
+  border: 1px solid #ff5555;
+  color: #ff5555;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+}
+
+.admin-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin-input-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 6px;
+}
+
+.admin-input-group label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.admin-input-group input {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  color: #fff;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.admin-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 16px;
+}
+
+.admin-dashboard-container {
+  padding-top: 120px;
+  padding-bottom: 80px;
+}
+
+.admin-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 20px;
+}
+
+.admin-title-box h1 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: #fff;
+  margin-top: 6px;
+}
+
+.dashboard-main-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.admin-card-box {
+  background: var(--bg-surface, #0f0f14);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.admin-card-box h2 {
+  font-family: var(--font-heading);
+  color: var(--accent-gold);
+  font-size: 1.15rem;
+  margin-bottom: 20px;
+}
+
+.admin-product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.form-group input, .form-group select, .form-group textarea {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 6px;
+}
+
+.tallas-toggle-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+}
+
+.talla-toggle-btn {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.talla-toggle-btn.active {
+  background: var(--accent-gold);
+  color: #000;
+}
+
+.file-upload-label {
+  background: var(--bg-surface-elevated);
+  border: 1px dashed var(--accent-gold);
+  color: var(--accent-gold);
+  padding: 14px;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.file-upload-label input { display: none; }
+
+.preview-thumbs-grid {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.preview-thumb {
+  width: 50px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--accent-gold);
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.admin-products-scroll-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 550px;
+  overflow-y: auto;
+}
+
+.admin-product-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg-surface-elevated);
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.admin-item-img {
+  width: 50px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.admin-item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-id-code {
+  font-size: 0.72rem;
+  color: var(--accent-gold);
+}
+
+.item-name {
+  font-size: 0.88rem;
+  color: #fff;
+}
+
+.item-price {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.admin-item-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-edit-sm, .btn-danger-sm {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.btn-danger-sm { border-color: #ff5555; color: #ff5555; }
+
+.admin-section-block {
+  background: var(--bg-surface, #0f0f14);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 40px;
+}
+
+.admin-section-block h3 {
+  font-family: var(--font-heading);
+  color: var(--accent-gold);
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.admin-subtext {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.admin-table-wrapper {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.88rem;
+}
+
+.admin-table th, .admin-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-table th {
+  color: var(--accent-gold);
+  font-family: var(--font-heading);
+}
+
+.gold-text-bold {
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.status-badge {
+  background: var(--bg-surface-elevated);
+  color: #fff;
+  border: 1px solid var(--border-subtle);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.coupon-create-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.coupon-create-form input, .coupon-create-form select {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 6px;
+}
+
+.coupons-grid-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.coupon-admin-card {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--accent-gold);
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.coupon-code-title {
+  font-weight: 800;
+  color: #fff;
+}
+
+.coupon-value {
+  font-size: 0.85rem;
+  color: var(--accent-gold);
+}
+
+@media (max-width: 900px) {
+  .dashboard-main-grid {
+    grid-template-columns: 1fr;
+  }
+}

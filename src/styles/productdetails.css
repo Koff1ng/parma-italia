@@ -178,3 +178,59 @@
 .acordeon {
   border-bottom: 1px solid #eaeaea;
 }
+
+/* ================================
+   TALLAS SIN STOCK
+================================ */
+.size-btn.out-of-stock {
+  position: relative;
+  opacity: 0.4;
+  cursor: not-allowed !important;
+  color: #999 !important;
+  background: #f5f5f5 !important;
+  border-color: #ddd !important;
+  pointer-events: none;
+}
+
+.size-btn.out-of-stock::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: #999;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.size-btn.out-of-stock:hover {
+  background: #f5f5f5 !important;
+  color: #999 !important;
+  transform: none !important;
+  border-color: #ddd !important;
+}
+
+.size-btn.out-of-stock.active {
+  background: #f5f5f5 !important;
+  color: #999 !important;
+  border-color: #ddd !important;
+  opacity: 0.4;
+}
+
+/* ================================
+   BOTÓN DESHABILITADO
+================================ */
+.btn-add-cart.disabled,
+.btn-add-cart:disabled {
+  background: #e0e0e0 !important;
+  color: #999 !important;
+  cursor: not-allowed !important;
+  opacity: 0.6;
+}
+
+.btn-add-cart.disabled:hover,
+.btn-add-cart:disabled:hover {
+  background: #e0e0e0 !important;
+  transform: none;
+}

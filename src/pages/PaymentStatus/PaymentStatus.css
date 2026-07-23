@@ -1,0 +1,50 @@
+.status-page-container {
+  padding-top: 160px;
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.status-card {
+  background: var(--bg-surface, #0f0f14);
+  border: 1px solid var(--border-gold-glow);
+  border-radius: 16px;
+  padding: 50px 40px;
+  max-width: 550px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.status-icon {
+  font-size: 3.5rem;
+}
+
+.status-card h2 {
+  font-family: var(--font-heading);
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+.status-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.status-sub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.status-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}

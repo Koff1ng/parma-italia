@@ -1,12 +1,53 @@
-.admin-login,
-.dashboard {
+.admin-login {
   min-height: 100vh;
-  background: #20214f;
-  color: #fff;
+  width: 100vw;
+  background: #20214f !important;
+  color: #fff !important;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 80px;
+  justify-content: center;
+  padding: 80px 20px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* Asegurar que body y html tengan el fondo correcto */
+body.admin-page-active,
+html.admin-page-active {
+  background: #20214f !important;
+  color: #fff !important;
+  overflow: hidden !important;
+}
+
+#root.admin-page-active {
+  background: #20214f !important;
+}
+
+.admin-loading {
+  min-height: 100vh;
+  width: 100vw;
+  background: #20214f !important;
+  color: #fff !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 /* card login */
@@ -30,6 +71,13 @@
   border-radius: 6px;
   border: none;
   outline: none;
+  background: #fff;
+  color: #000 !important;
+  font-size: 14px;
+}
+
+.admin-card input::placeholder {
+  color: #999;
 }
 
 .admin-card button {
@@ -40,6 +88,15 @@
   color: #fff;
   font-weight: 600;
   cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.admin-card button:hover {
+  background: #145b56;
+}
+
+.admin-card button:active {
+  transform: scale(0.98);
 }
 
 .admin-error {

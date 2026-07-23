@@ -1,265 +1,592 @@
-/* ================
-  CONTENEDOR GENERAL
-=================== */
+/* ============================================
+   CHECKOUT DETAILS - TEMA OSCURO-GRIS
+   Diseño completamente renovado
+============================================ */
+
 .checkout-main {
-  
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding: 20px;
-  max-width: 900px;
-  color: white;
-  margin-top: 100px;
-  margin-left: 500px;
+  min-height: 100vh !important;
+  background: #1a1a1a !important;
+  color: #e0e0e0 !important;
+  padding: 100px 20px 40px !important;
+  font-family: 'Montserrat', sans-serif !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
 }
 
-/* ================
-  TARJETAS FLOTANTES
-=================== */
-.window-card {
-  background: #121212;
-  padding: 25px;
-  border-radius: 18px;
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255,255,255,0.05);
+.checkout-container {
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: 1fr 450px !important;
+  gap: 40px !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
-.window-title {
-  text-align: center;
-  font-size: 26px;
-  margin-bottom: 20px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: white;
+.checkout-left {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
-/* ================
-  FORMULARIO CLIENTE
-=================== */
-.window-card label {
-  display: block;
-  color: #dcdcdc;
-  margin-bottom: 6px;
-  margin-top: 14px;
-  font-size: 15px;
+.checkout-right {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 30px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
-.window-card input {
-  width: 100%;
-  padding: 12px 14px;
-  border-radius: 10px;
-  border: 1px solid #444;
-  background: #1c1c1c;
-  color: white;
-  font-size: 15px;
-  outline: none;
-  transition: border 0.2s ease;
+/* ============================================
+   SECCIONES
+============================================ */
+.checkout-section {
+  background: #2a2a2a !important;
+  border-radius: 16px !important;
+  padding: 32px !important;
+  margin-bottom: 30px !important;
+  border: 1px solid #3a3a3a !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
-.window-card input:focus {
-  border-color: #2EA8E5;
+.section-title {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 0 24px 0 !important;
+  padding-bottom: 16px !important;
+  border-bottom: 2px solid #3a3a3a !important;
+  letter-spacing: -0.3px !important;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
-/* Botón guardar */
+/* ============================================
+   FORMULARIO
+============================================ */
+.form-container {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+  width: 100% !important;
+}
+
+.form-group {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  width: 100% !important;
+}
+
+.form-group label {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #d0d0d0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.required {
+  color: #ff4444 !important;
+  font-weight: 700 !important;
+}
+
+.optional {
+  color: #888 !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+}
+
+.form-group input {
+  width: 100% !important;
+  padding: 14px 16px !important;
+  border: 2px solid #3a3a3a !important;
+  border-radius: 10px !important;
+  background: #1f1f1f !important;
+  color: #ffffff !important;
+  font-size: 15px !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.2s ease !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+}
+
+.form-group input::placeholder {
+  color: #666 !important;
+}
+
+.form-group input:focus {
+  outline: none !important;
+  border-color: #00aaff !important;
+  background: #252525 !important;
+  box-shadow: 0 0 0 3px rgba(0, 170, 255, 0.1) !important;
+}
+
+/* ============================================
+   BOTÓN GUARDAR
+============================================ */
 .btn-save {
-  width: 100%;
-  margin-top: 20px;
-  padding: 13px;
-  border: none;
-  border-radius: 10px;
-  background-color: #2ea8e5;
-  color: white;
-  font-size: 17px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s ease;
+  width: 100% !important;
+  padding: 16px !important;
+  border: none !important;
+  border-radius: 12px !important;
+  background: #00aaff !important;
+  color: #ffffff !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  font-family: 'Montserrat', sans-serif !important;
+  margin-top: 8px !important;
+  box-sizing: border-box !important;
 }
 
-.btn-save:hover {
-  background-color: #1d7bb3;
+.btn-save:hover:not(:disabled) {
+  background: #0088cc !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(0, 170, 255, 0.3) !important;
+}
+
+.btn-save:active:not(:disabled) {
+  transform: translateY(0) !important;
 }
 
 .btn-save.disabled,
 .btn-save:disabled {
-  background: #555;
-  cursor: not-allowed;
+  background: #3a3a3a !important;
+  color: #666 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
 }
 
-/* ================
-  RESUMEN DEL PEDIDO
-=================== */
-.order-line {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  padding: 12px 0;
+.btn-save.saved {
+  background: #27ae60 !important;
 }
 
-.order-line p {
-  margin: 0;
-  color: #bdbdbd;
+.btn-save.saved:hover {
+  background: #229954 !important;
 }
 
-.order-line strong {
-  color: white;
+/* ============================================
+   ITEMS DEL PEDIDO
+============================================ */
+.order-items-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+  margin-bottom: 24px !important;
+  max-height: 400px !important;
+  overflow-y: auto !important;
+  padding-right: 8px !important;
+  width: 100% !important;
 }
 
-.order-total {
-  display: flex;
-  justify-content: space-between;
-  font-size: 20px;
-  margin-top: 15px;
-  font-weight: bold;
+.order-items-list::-webkit-scrollbar {
+  width: 6px !important;
 }
 
-/* ======================
-    BOTÓN MERCADO PAGO
-======================= */
-.mp-wrapper {
-  text-align: center;
+.order-items-list::-webkit-scrollbar-track {
+  background: #1f1f1f !important;
+  border-radius: 3px !important;
 }
 
-.mp-btn {
-  width: 100%;
-  background: #00A6E3;
-  border: none;
-  padding: 16px 20px;
-  border-radius: 12px;
-  cursor: pointer;
-  font-size: 18px;
-  color: white;
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-
-  transition: background 0.25s ease, transform 0.1s ease;
+.order-items-list::-webkit-scrollbar-thumb {
+  background: #4a4a4a !important;
+  border-radius: 3px !important;
 }
 
-.mp-btn:hover {
-  background: #008CC2;
-  transform: translateY(-1px);
+.order-items-list::-webkit-scrollbar-thumb:hover {
+  background: #5a5a5a !important;
 }
 
-.mp-btn.disabled,
-.mp-btn:disabled {
-  background: #555;
-  cursor: not-allowed;
+.order-item {
+  display: flex !important;
+  gap: 16px !important;
+  padding: 16px !important;
+  background: #1f1f1f !important;
+  border-radius: 12px !important;
+  border: 1px solid #3a3a3a !important;
+  align-items: center !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
-/* Logo MP */
-.mp-btn-logo {
-  height: 30px;
-  width: auto;
-  object-fit: contain;
+.order-item-image {
+  width: 80px !important;
+  height: 80px !important;
+  flex-shrink: 0 !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  background: #2a2a2a !important;
+  border: 1px solid #3a3a3a !important;
 }
 
-/* Texto título */
-.mp-btn-title {
-  font-size: 20px;
-  font-weight: 700;
-  text-shadow: 0px 1px 3px rgba(0,0,0,0.3);
+.order-item-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
 }
 
-/* Texto pequeño debajo */
-.mp-btn-sub {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #cfcfcf;
+.order-item-info {
+  flex: 1 !important;
+  min-width: 0 !important;
 }
 
-/* ===========================
-     BOTÓN WHATSAPP
-=========================== */
-.btn-whatsapp {
-  width: 100%;
-  margin-top: 18px;
-  background: #25D366;
-  border: none;
-  padding: 14px;
-  border-radius: 12px;
-  color: white;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 17px;
-  transition: background 0.25s ease;
+.order-item-name {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin: 0 0 8px 0 !important;
+  line-height: 1.4 !important;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
-.btn-whatsapp:hover {
-  background: #159c49;
+.order-item-details {
+  display: flex !important;
+  gap: 12px !important;
+  font-size: 13px !important;
+  color: #999 !important;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
-.btn-whatsapp.disabled,
-.btn-whatsapp:disabled {
-  background: #555;
-  cursor: not-allowed;
+.order-item-price {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #00aaff !important;
+  white-space: nowrap !important;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
-/* ==========================================
-   📱 RESPONSIVE CHECKOUT DETAILS — MOBILE
-========================================== */
+/* ============================================
+   RESUMEN DE PRECIOS
+============================================ */
+.order-summary {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  padding-top: 20px !important;
+  border-top: 2px solid #3a3a3a !important;
+  width: 100% !important;
+}
+
+.summary-line {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  font-size: 15px !important;
+  color: #d0d0d0 !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.summary-line.discount {
+  color: #27ae60 !important;
+}
+
+.discount-value {
+  color: #27ae60 !important;
+  font-weight: 700 !important;
+}
+
+.coupon-badge {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  background: rgba(39, 174, 96, 0.2) !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  color: #27ae60 !important;
+  margin-left: 6px !important;
+}
+
+.summary-line.total {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  padding-top: 16px !important;
+  border-top: 2px solid #4a4a4a !important;
+  margin-top: 4px !important;
+}
+
+.summary-line.total strong {
+  font-size: 24px !important;
+  color: #00aaff !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.coupon-applied {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-top: 20px !important;
+  padding: 12px 16px !important;
+  background: rgba(39, 174, 96, 0.15) !important;
+  border: 1px solid #27ae60 !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  color: #27ae60 !important;
+  font-weight: 600 !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.coupon-icon {
+  font-size: 16px !important;
+}
+
+/* ============================================
+   MÉTODOS DE PAGO
+============================================ */
+.payment-section {
+  position: sticky !important;
+  top: 100px !important;
+}
+
+.payment-methods {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+  width: 100% !important;
+}
+
+.payment-btn {
+  width: 100% !important;
+  padding: 20px !important;
+  border: 2px solid #3a3a3a !important;
+  border-radius: 12px !important;
+  background: #1f1f1f !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  text-align: left !important;
+  box-sizing: border-box !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.payment-btn:hover:not(:disabled) {
+  border-color: #00aaff !important;
+  background: #252525 !important;
+  transform: translateX(4px) !important;
+  box-shadow: 0 4px 12px rgba(0, 170, 255, 0.2) !important;
+}
+
+.payment-btn:active:not(:disabled) {
+  transform: translateX(2px) !important;
+}
+
+.payment-btn.disabled,
+.payment-btn:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  border-color: #2a2a2a !important;
+}
+
+.payment-btn-content {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  flex: 1 !important;
+}
+
+.payment-logo {
+  height: 32px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  flex-shrink: 0 !important;
+  filter: brightness(1.1) !important;
+}
+
+.whatsapp-icon {
+  font-size: 28px !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #25D366 !important;
+  border-radius: 10px !important;
+  flex-shrink: 0 !important;
+}
+
+.payment-btn-text {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+.payment-btn-title {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.payment-btn-subtitle {
+  font-size: 13px !important;
+  color: #999 !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.payment-arrow {
+  font-size: 20px !important;
+  color: #666 !important;
+  transition: transform 0.2s ease, color 0.2s ease !important;
+  flex-shrink: 0 !important;
+}
+
+.payment-btn:hover:not(:disabled) .payment-arrow {
+  transform: translateX(4px) !important;
+  color: #00aaff !important;
+}
+
+.payment-divider {
+  display: flex !important;
+  align-items: center !important;
+  text-align: center !important;
+  margin: 8px 0 !important;
+  color: #666 !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.payment-divider::before,
+.payment-divider::after {
+  content: '' !important;
+  flex: 1 !important;
+  border-bottom: 1px solid #3a3a3a !important;
+}
+
+.payment-divider span {
+  padding: 0 16px !important;
+}
+
+.payment-notice {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  padding: 16px !important;
+  background: #2a2a00 !important;
+  border: 1px solid #555500 !important;
+  border-radius: 8px !important;
+  margin-top: 20px !important;
+}
+
+.notice-icon {
+  font-size: 18px !important;
+  flex-shrink: 0 !important;
+}
+
+.payment-notice p {
+  margin: 0 !important;
+  font-size: 13px !important;
+  color: #ffaa00 !important;
+  line-height: 1.5 !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+@media (max-width: 1200px) {
+  .checkout-container {
+    grid-template-columns: 1fr 400px !important;
+    gap: 30px !important;
+  }
+}
+
+@media (max-width: 968px) {
+  .checkout-container {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+
+  .payment-section {
+    position: relative !important;
+    top: 0 !important;
+  }
+
+  .checkout-main {
+    padding: 80px 20px 40px !important;
+  }
+}
+
 @media (max-width: 768px) {
-
   .checkout-main {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+    padding: 70px 15px 30px !important;
   }
 
-  .window-card {
-    width: 100%;
-    padding: 15px;
-    border-radius: 12px;
+  .checkout-section {
+    padding: 24px !important;
+    margin-bottom: 20px !important;
   }
 
-  .window-title {
-    font-size: 20px;
-    margin-bottom: 12px;
+  .section-title {
+    font-size: 20px !important;
+    margin-bottom: 20px !important;
   }
 
-  input {
-    width: 100%;
-    padding: 12px;
-    font-size: 15px;
-    border-radius: 8px;
-    margin-bottom: 12px;
+  .form-container {
+    gap: 16px !important;
   }
 
-  .order-line {
-    display: flex;
-    justify-content: space-between;
-    padding: 8px 0;
-    font-size: 14px;
+  .order-item {
+    padding: 12px !important;
   }
 
-  .order-line strong {
-    font-size: 15px;
+  .order-item-image {
+    width: 70px !important;
+    height: 70px !important;
   }
 
-  .order-total span,
-  .order-total strong {
-    font-size: 18px;
-  }
-
-  .mp-btn,
-  .btn-whatsapp {
-    width: 100%;
-    padding: 14px;
-    font-size: 16px;
-    border-radius: 10px;
-  }
-
-  .mp-btn-logo {
-    width: 32px;
-    height: 32px;
+  .payment-btn {
+    padding: 16px !important;
   }
 }
-@media (max-width: 900px) {
+
+@media (max-width: 480px) {
   .checkout-main {
-    margin-left: 0 !important;
-    margin-top: 80px; /* si la navbar ocupa ese espacio */
-    max-width: 100%;
+    padding: 60px 10px 20px !important;
+  }
+
+  .checkout-section {
+    padding: 20px !important;
+    border-radius: 12px !important;
+  }
+
+  .section-title {
+    font-size: 18px !important;
+  }
+
+  .order-item {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .order-item-image {
+    width: 100% !important;
+    height: 200px !important;
+  }
+
+  .order-item-price {
+    align-self: flex-end !important;
+    margin-top: 8px !important;
+  }
+
+  .payment-btn {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .payment-arrow {
+    align-self: flex-end !important;
   }
 }

@@ -1,0 +1,244 @@
+.bag-page-container {
+  padding-top: 130px;
+  padding-bottom: 80px;
+}
+
+.bag-heading {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  color: var(--accent-gold);
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+.empty-bag-view {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-box {
+  background: var(--bg-surface, #0f0f14);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 50px 40px;
+  text-align: center;
+  max-width: 500px;
+}
+
+.gold-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.empty-box h2 {
+  font-family: var(--font-heading);
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.empty-box p {
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.bag-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 40px;
+}
+
+.bag-items-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bag-row-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--bg-surface, #0f0f14);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.bag-item-thumb {
+  width: 90px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.bag-item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.bag-item-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.bag-item-size {
+  font-size: 0.82rem;
+  color: var(--accent-gold);
+  margin-bottom: 4px;
+}
+
+.bag-item-unit-price {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.bag-qty-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.qty-picker {
+  display: flex;
+  align-items: center;
+  background: var(--bg-surface-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.qty-picker button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.qty-picker span {
+  padding: 0 10px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.bag-remove-link {
+  background: transparent;
+  border: none;
+  color: #ff5555;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.bag-item-total {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.clear-bag-btn {
+  align-self: flex-start;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.clear-bag-btn:hover { color: #ff5555; }
+
+.bag-summary-card {
+  background: var(--bg-surface, #0f0f14);
+  border: 1px solid var(--border-gold-glow);
+  border-radius: 12px;
+  padding: 28px;
+  height: fit-content;
+  box-shadow: var(--shadow-card);
+}
+
+.summary-title {
+  font-family: var(--font-heading);
+  color: var(--accent-gold);
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+
+.summary-line.total-line {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 14px;
+  margin-top: 14px;
+}
+
+.gold-price {
+  font-family: var(--font-heading);
+  color: var(--accent-gold);
+}
+
+.bag-coupon-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+.bag-coupon-form input {
+  flex: 1;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 4px;
+}
+
+.bag-coupon-form button {
+  background: var(--accent-gold);
+  color: #000;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.coupon-msg { font-size: 0.82rem; margin-bottom: 16px; }
+.coupon-msg.success { color: #55ff99; }
+.coupon-msg.error { color: #ff5555; }
+
+.checkout-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.full-btn {
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 850px) {
+  .bag-grid {
+    grid-template-columns: 1fr;
+  }
+}

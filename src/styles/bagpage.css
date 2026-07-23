@@ -101,7 +101,14 @@
 
 .coupon-area {
   display: flex;
+  flex-direction: column;
   gap: 10px;
+}
+
+.coupon-input-group {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
 }
 
 .coupon-area input {
@@ -120,6 +127,8 @@
   border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .coupon-area .btn-add:hover {
@@ -179,5 +188,89 @@
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+}
+
+/* ESTILOS PARA CUPONES */
+.discount-row {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.discount-value {
+  color: #28a745;
+  font-weight: 700;
+}
+
+.total-row {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 2px solid #e5e5e5;
+}
+
+.total-value {
+  font-size: 20px;
+  color: #000;
+}
+
+.coupon-applied {
+  margin-bottom: 10px;
+}
+
+.coupon-success {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 8px;
+  color: #155724;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn-remove-cupon {
+  background: none;
+  border: none;
+  color: #155724;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.btn-remove-cupon:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.coupon-input-group {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.coupon-error {
+  color: #dc3545;
+  font-size: 12px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 500;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.error-input {
+  border-color: #dc3545 !important;
+  border-width: 2px !important;
 }
 
